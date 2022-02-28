@@ -1,3 +1,3 @@
-TeamName : 잘했조
-Concept : Food Delivery
+# TeamName : 잘했조
+# Concept : Food Delivery
 
