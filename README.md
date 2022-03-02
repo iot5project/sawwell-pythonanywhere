@@ -47,7 +47,7 @@ bootstrampmade.com 템플릿을 이용 (https://bootstrapmade.com/demo/Tempo)
 
 ### SiteMap
 
-<img width="%100" alt='ERD' src='https://user-images.githubusercontent.com/73889507/156301385-423448e7-a8c7-4ff4-aae9-94d00e93811c.png'>
+<img width="%100" alt='ERD' src='https://user-images.githubusercontent.com/73889507/156358668-d9d7db11-c2a7-47df-a5a0-3e7ca8dd3f5e.png'>
 
 ### ERD
 
