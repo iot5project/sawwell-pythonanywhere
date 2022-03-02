@@ -26,6 +26,12 @@
 
 구축된 DB와 함께 연결하여 파이썬 애니웨어를 통하여 웹상에 배포됩니다.
 
+### 주요화면
+
+<img width="%100" alt='ERD' src='https://user-images.githubusercontent.com/73889507/156303175-9f8ce60e-8dd1-432c-87f2-c04645a8ef16.PNG'>
+
+bootstrampmade.com 템플릿을 이용 (https://bootstrapmade.com/demo/Tempo)
+
 ### SiteMap
 
 <img width="%100" alt='ERD' src='https://user-images.githubusercontent.com/73889507/156301385-423448e7-a8c7-4ff4-aae9-94d00e93811c.png'>
