@@ -50,8 +50,6 @@ bootstrampmade.com 템플릿을 이용 (https://bootstrapmade.com/demo/Tempo)
 
 ### ERD
 
-<img width="%100" alt='ERD' src='https://user-images.githubusercontent.com/73889507/156306172-a421cbf6-2771-4152-ab37-fa4dd2713f3a.png'>
-
 ### 4. 프로젝트 환경 및 사용된 툴
 
 
