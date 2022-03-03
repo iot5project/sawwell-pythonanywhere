@@ -10,3 +10,7 @@ class MyView(View):
     def home(self, request):
         return render(request, 'home.html')
 
+    @request_mapping('/login')
+    def login(self, request):
+        return render(request, 'logins.html')
+
