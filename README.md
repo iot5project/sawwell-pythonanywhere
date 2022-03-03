@@ -35,18 +35,15 @@
 
 <img width="%100" alt='contribute' src='https://user-images.githubusercontent.com/73889507/156279545-b7737c3b-ecc1-41e3-9d18-0626b5139e5e.jpg'>
 
+### ERD
+
+<img width="%100" alt='erd' src='https://user-images.githubusercontent.com/73889507/156583549-6f74a22b-7fc5-435a-8a0f-e58b164b4509.png'>
 
 구축된 DB와 함께 연결하여 파이썬 애니웨어를 통하여 웹상에 배포됩니다.
 
 ### 주요화면
 
-<img width="%100" alt='ERD' src='https://user-images.githubusercontent.com/73889507/156303175-9f8ce60e-8dd1-432c-87f2-c04645a8ef16.PNG'>
-
 bootstrampmade.com 템플릿을 이용 (https://bootstrapmade.com/demo/Tempo)
-
-### SiteMap
-
-<img width="%100" alt='ERD' src='https://user-images.githubusercontent.com/73889507/156503243-3f51e4bd-63ac-4af7-b1cf-70336857a7db.png'>
 
 ### ERD
 
