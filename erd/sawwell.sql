@@ -15,8 +15,8 @@ CREATE TABLE `market` (
 	`marketname`	char(100)	NULL,
 	`marketaddress`	char(100)	NULL,
 	`regdate`	DATE	NULL,
-	`open`	char(20)	NULL,
-	`close`	DATE	NULL,
+	`open`	TIME	NULL,
+	`close`	TIME	NULL,
 	`holiday`	date	NULL,
 	`hit`	int(10)	NULL
 );
@@ -134,3 +134,4 @@ ALTER TABLE `reply` ADD CONSTRAINT `FK_ceo_TO_reply_1` FOREIGN KEY (
 REFERENCES `ceo` (
 	`ceoid`
 );
+
