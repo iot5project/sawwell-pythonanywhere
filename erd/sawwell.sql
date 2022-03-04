@@ -20,7 +20,7 @@ CREATE TABLE `market` (
 	`hit`	int(10)	NULL
 );
 
-CREATE TABLE `reivew` (
+CREATE TABLE `review` (
 	`reviewno`	int(10)	NOT NULL,
 	`marketno`	int(10)	NOT NULL,
 	`custno`	int(10)	NOT NULL,
@@ -65,7 +65,7 @@ ALTER TABLE `market` ADD CONSTRAINT PRIMARY KEY (
 	`marketno`
 );
 
-ALTER TABLE `reivew` ADD CONSTRAINT PRIMARY KEY (
+ALTER TABLE `review` ADD CONSTRAINT PRIMARY KEY (
 	`reviewno`
 );
 
@@ -99,14 +99,14 @@ REFERENCES `food` (
 	`foodid`
 );
 
-ALTER TABLE `reivew` ADD CONSTRAINT `FK_market_TO_reivew_1` FOREIGN KEY (
+ALTER TABLE `review` ADD CONSTRAINT `FK_market_TO_review_1` FOREIGN KEY (
 	`marketno`
 )
 REFERENCES `market` (
 	`marketno`
 );
 
-ALTER TABLE `reivew` ADD CONSTRAINT `FK_cust_TO_reivew_1` FOREIGN KEY (
+ALTER TABLE `review` ADD CONSTRAINT `FK_cust_TO_review_1` FOREIGN KEY (
 	`custno`
 )
 REFERENCES `cust` (
@@ -120,10 +120,10 @@ REFERENCES `market` (
 	`marketno`
 );
 
-ALTER TABLE `reply` ADD CONSTRAINT `FK_reivew_TO_reply_1` FOREIGN KEY (
+ALTER TABLE `reply` ADD CONSTRAINT `FK_review_TO_reply_1` FOREIGN KEY (
 	`reviewno`
 )
-REFERENCES `reivew` (
+REFERENCES `review` (
 	`reviewno`
 );
 
@@ -133,3 +133,4 @@ ALTER TABLE `reply` ADD CONSTRAINT `FK_ceo_TO_reply_1` FOREIGN KEY (
 REFERENCES `ceo` (
 	`ceoid`
 );
+
