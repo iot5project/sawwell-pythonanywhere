@@ -1,6 +1,6 @@
 CREATE TABLE `cust` (
 	`custno`	int(10)	NOT NULL,
-	`id`	int(10)	NULL,
+	`id`	char(30)	NULL,
 	`password`	char(30)	NULL,
 	`name`	char(10)	NULL,
 	`address`	char(100)	NULL,
@@ -24,7 +24,7 @@ CREATE TABLE `review` (
 	`reviewno`	int(10)	NOT NULL,
 	`marketno`	int(10)	NOT NULL,
 	`custno`	int(10)	NOT NULL,
-	`content`	int(10)	NULL,
+	`content`	char(100)	NULL,
 	`star`	float(10)	NULL,
 	`regdate`	DATE	NULL
 );
@@ -57,7 +57,7 @@ CREATE TABLE `reply` (
 	`regdate`	DATE	NULL
 );
 
-ALTER TABLE `cust` ADD CONSTRAINT PRIMARY KEY (
+ALTER TABLE `cust` ADD CONSTRAINT  PRIMARY KEY (
 	`custno`
 );
 
@@ -133,4 +133,3 @@ ALTER TABLE `reply` ADD CONSTRAINT `FK_ceo_TO_reply_1` FOREIGN KEY (
 REFERENCES `ceo` (
 	`ceoid`
 );
-
