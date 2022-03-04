@@ -6,7 +6,7 @@ CREATE TABLE `cust` (
 	`address`	char(100)	NULL,
 	`email`	char(100)	NULL,
 	`regdate`	DATE	NULL
-);test4
+);
 
 CREATE TABLE `market` (
 	`marketno`	int(10)	NOT NULL,
@@ -55,6 +55,34 @@ CREATE TABLE `reply` (
 	`ceoid`	int(10)	NOT NULL,
 	`content`	char(100)	NULL,
 	`regdate`	DATE	NULL
+);
+
+ALTER TABLE `cust` ADD CONSTRAINT PRIMARY KEY (
+	`custno`
+);
+
+ALTER TABLE `market` ADD CONSTRAINT PRIMARY KEY (
+	`marketno`
+);
+
+ALTER TABLE `reivew` ADD CONSTRAINT PRIMARY KEY (
+	`reviewno`
+);
+
+ALTER TABLE `categori` ADD CONSTRAINT PRIMARY KEY (
+	`cid`
+);
+
+ALTER TABLE `food` ADD CONSTRAINT PRIMARY KEY (
+	`foodid`
+);
+
+ALTER TABLE `ceo` ADD CONSTRAINT PRIMARY KEY (
+	`ceoid`
+);
+
+ALTER TABLE `reply` ADD CONSTRAINT PRIMARY KEY (
+	`replyid`
 );
 
 ALTER TABLE `market` ADD CONSTRAINT `FK_categori_TO_market_1` FOREIGN KEY (
