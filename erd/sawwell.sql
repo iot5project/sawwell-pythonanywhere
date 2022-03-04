@@ -15,7 +15,8 @@ CREATE TABLE `market` (
 	`marketname`	char(100)	NULL,
 	`marketaddress`	char(100)	NULL,
 	`regdate`	DATE	NULL,
-	`openclose`	char(20)	NULL,
+	`open`	char(20)	NULL,
+	`close`	DATE	NULL,
 	`holiday`	date	NULL,
 	`hit`	int(10)	NULL
 );
@@ -57,7 +58,7 @@ CREATE TABLE `reply` (
 	`regdate`	DATE	NULL
 );
 
-ALTER TABLE `cust` ADD CONSTRAINT  PRIMARY KEY (
+ALTER TABLE `cust` ADD CONSTRAINT PRIMARY KEY (
 	`custno`
 );
 

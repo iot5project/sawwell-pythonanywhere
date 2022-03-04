@@ -75,16 +75,17 @@ INSERT INTO ceo VALUES(8,8,'id8','pw8','ujin');
 INSERT INTO ceo VALUES(9,9,'id9','pw9','klove');
 INSERT INTO ceo VALUES(10,10,'id10','pw10','good');
 
-INSERT INTO review VALUES(1, 1, 1, 111, 3.4, '2022-03-04');
-INSERT INTO review VALUES(2, 2, 2, 222, 2.4, '2021-05-05');
-INSERT INTO review VALUES(3, 3, 3, 333, 1.1, '2018-11-22');
-INSERT INTO review VALUES(4, 4, 4, 444, 4.9, '2024-12-03');
-INSERT INTO review VALUES(5, 5, 5, 555, 5.0, '2018-07-07');
-INSERT INTO review VALUES(6, 6, 6, 666, 3.7, '2020-11-22');
-INSERT INTO review VALUES(7, 7, 7, 777, 4.4, '2022-01-01');
-INSERT INTO review VALUES(8, 8, 8, 888, 3.3, '2022-01-14');
-INSERT INTO review VALUES(9, 9, 9, 999, 2.1, '2021-12-22');
-INSERT INTO review VALUES(10, 10, 10, 101010, 1.2, '2022-03-01');
+INSERT INTO review VALUES(1, 1, 1, 'good', 3.4, '2022-03-04');
+INSERT INTO review VALUES(2, 2, 2, 'well', 2.4, '2021-05-05');
+INSERT INTO review VALUES(3, 3, 3, 'bad', 1.1, '2018-11-22');
+INSERT INTO review VALUES(4, 4, 4, 'great', 4.9, '2024-12-03');
+INSERT INTO review VALUES(5, 5, 5, 'so so', 5.0, '2018-07-07');
+INSERT INTO review VALUES(6, 6, 6, 'not bad', 3.7, '2020-11-22');
+INSERT INTO review VALUES(7, 7, 7, 'good', 4.4, '2022-01-01');
+INSERT INTO review VALUES(8, 8, 8, 'best', 3.3, '2022-01-14');
+INSERT INTO review VALUES(9, 9, 9, 'good', 2.1, '2021-12-22');
+INSERT INTO review VALUES(10, 10, 10, 'bad', 1.2, '2022-03-01');
+
 
 INSERT INTO reply VALUES(1, 1, 1, 'good', '2022-03-04');
 INSERT INTO reply VALUES(2, 2, 2, 'well', '2022-01-14');
