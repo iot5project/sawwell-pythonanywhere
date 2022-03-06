@@ -39,18 +39,6 @@
 
 <img width="%100" alt='erd' src='https://user-images.githubusercontent.com/73889507/156583549-6f74a22b-7fc5-435a-8a0f-e58b164b4509.png'>
 
-구축된 DB와 함께 연결하여 파이썬 애니웨어를 통하여 웹상에 배포됩니다.
-
-### 주요화면
-
-bootstrampmade.com 템플릿을 이용 (https://bootstrapmade.com/demo/Tempo)
-
-### ERD
-
-### 데이터
-
-서울특별시 도봉구_맛집 현황(https://www.data.go.kr/data/3073323/fileData.do)
-
 ### 테스트 
 
 ## 1. 테스트용 데이터  넣기
@@ -249,6 +237,62 @@ INSERT INTO reply VALUES(10, 10, 10, 'bad', '2022-03-04');
 ## 2. 테스트 쿼리 및 결과
 
 <img width="%100" alt='erd' src='https://user-images.githubusercontent.com/73889507/156928469-224a855f-f682-4f5d-9e00-84452788c661.png'>
+
+구축된 DB와 함께 연결하여 파이썬 애니웨어를 통하여 웹상에 배포됩니다.
+
+### 주요화면
+
+bootstrampmade.com 템플릿을 이용 (https://bootstrapmade.com/demo/Tempo)
+
+## ui 구성 현황
+
+## 현재 ui
+
+home, login, categori, popular market, recommand, search
+
+## 업데이트 ui
+
+review, market, reply, register
+
+## Home
+
+메인 section
+
+<img width="%100" alt='erd' src='https://user-images.githubusercontent.com/73889507/156929344-09a93460-5e75-47c6-9a0b-2c9bc64cf5e8.PNG'>
+
+## login 
+
+로고인 페이지
+
+<img width="%100" alt='erd' src='https://user-images.githubusercontent.com/73889507/156929202-a42b95ea-41b3-4df4-9626-06687ff57539.PNG'>
+
+## categori
+
+음식점 종류 section (음식점 페이지 리뷰 페이지 추휴 설정)
+
+<img width="%100" alt='erd' src='https://user-images.githubusercontent.com/73889507/156929216-312275f2-7114-4628-87d9-0d90471caf73.PNG'>
+
+## popular market
+
+인기 있는 음식점 section
+
+<img width="%100" alt='erd' src='https://user-images.githubusercontent.com/73889507/156929427-614f1d0e-b8df-44e6-ad6a-0f97ff21f755.PNG'>
+
+## Recommand
+
+추천 음식 고르는 section
+
+<img width="%100" alt='erd' src='https://user-images.githubusercontent.com/73889507/156929385-68add7d8-d8d0-448a-afd0-ac9169777042.PNG'>
+
+## search
+
+검색 section
+
+<img width="%100" alt='erd' src='https://user-images.githubusercontent.com/73889507/156929493-ad400700-c65c-4dc1-ad72-a673c78d9974.PNG'>
+
+### 데이터
+
+서울특별시 도봉구_맛집 현황(https://www.data.go.kr/data/3073323/fileData.do)
 
 
 ### 4. 프로젝트 환경 및 사용된 툴
