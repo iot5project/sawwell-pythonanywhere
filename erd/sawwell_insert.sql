@@ -97,10 +97,3 @@ INSERT INTO reply VALUES(7, 7, 7, 'great', '2018-11-08');
 INSERT INTO reply VALUES(8, 8, 8, 'good', '2020-05-05');
 INSERT INTO reply VALUES(9, 9, 9, 'great', '2020-03-20');
 INSERT INTO reply VALUES(10, 10, 10, 'bad', '2022-03-04');
-
-
-
-
-
-
-
