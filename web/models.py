@@ -11,7 +11,6 @@ class Cust(models.Model):
     regdate = models.DateField(blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'cust'
 
 
@@ -20,7 +19,6 @@ class Categori(models.Model):
     categoriname = models.CharField(max_length=30, blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'categori'
 
 
@@ -31,7 +29,6 @@ class Food(models.Model):
     regdate = models.DateField(blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'food'
 
 
@@ -48,7 +45,6 @@ class Market(models.Model):
     hit = models.IntegerField(blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'market'
 
 
@@ -60,7 +56,6 @@ class Ceo(models.Model):
     name = models.CharField(max_length=100, blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'ceo'
 
 
@@ -72,7 +67,6 @@ class Reply(models.Model):
     regdate = models.DateField(blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'reply'
 
 
@@ -85,7 +79,6 @@ class Review(models.Model):
     regdate = models.DateField(blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'review'
 
 
