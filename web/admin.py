@@ -1,9 +1,9 @@
 from django.contrib import admin
 
-from webproject.web.models import Categori
+from web.models import Categori, Cust, Ceo, Food, Market, Reply, Review
 
 
-class Cust(admin.ModelAdmin):
+class CustAdmin(admin.ModelAdmin):
     list_display = ('custno', 'id', 'password', 'name', 'address', 'email', 'regdate')
 
 
@@ -24,13 +24,18 @@ class CeoAdmin(admin.ModelAdmin):
     list_display = ('ceoid', 'marketno', 'id', 'password', 'name')
 
 
-class Reply(admin.ModelAdmin):
-    list_display = ('replyno', 'reviewno', 'ceoid', 'content', 'regdate')
+class ReplyAdmin(admin.ModelAdmin):
+    list_display = ('replyid', 'reviewno', 'ceoid', 'content', 'regdate')
 
 
-class Review(admin.ModelAdmin):
-    list_display = ('', '')
+class ReviewAdmin(admin.ModelAdmin):
+    list_display = ('reviewno', 'marketno', 'custno', 'content', 'star', 'regdate')
 
 
-admin.site.register(Categori,CategoriAdmin)
-# Register your models here.
+admin.site.register(Cust, CustAdmin)
+admin.site.register(Categori, CategoriAdmin)
+admin.site.register(Food, FoodAdmin)
+admin.site.register(Market, MarketAdmin)
+admin.site.register(Ceo, CeoAdmin)
+admin.site.register(Reply, ReplyAdmin)
+admin.site.register(Review, ReviewAdmin)
