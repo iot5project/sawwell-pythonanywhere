@@ -14,9 +14,42 @@ class MyView(View):
     def login(self, request):
         return render(request, 'logins.html')
 
+    @request_mapping("/loginimpl", method="post")
+    def loginimpl(self, request):
+
+        id = request.POST['id'];
+        pwd = request.POST['pwd'];
+        context = {};
+        try:
+            cust = Cust.objects.get(id=id);
+            if cust.pwd == pwd:
+                request.session['sessionid'] = cust.id;
+                request.session['sessionname'] = cust.name;
+            else:
+                raise Exception;
+        except:
+            print("login fail")
+        return render(request, 'home.html', context);
+
     @request_mapping('/register')
     def register(self, request):
         return render(request, 'register.html')
+
+    @request_mapping("/registerimpl", method="post")
+    def registerimpl(self, request):
+        id = request.POST['id'];
+        pwd = request.POST['pwd'];
+        name = request.POST['name'];
+        add = request.POST['add'];
+        email = request.POST['email'];
+        print(id, pwd, name, add, email);
+        context = {};
+        try:
+            Cust.objects.get(id=id);
+        except:
+            Cust(id=id, pwd=pwd, name=name, add=add, email=email).save();
+            print("register fail")
+        return render(request, 'home.html');
 
     @request_mapping('/korean')
     def korean(self, request):
