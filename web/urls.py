@@ -9,3 +9,6 @@ urlpatterns.register(MyView)
 urlpatterns.register(MarketView)
 urlpatterns.register(ReviewView)
 
+
+
+

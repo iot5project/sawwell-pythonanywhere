@@ -19,3 +19,4 @@ class MyView(View):
         return render(request, 'register.html')
 
 
+
