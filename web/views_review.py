@@ -4,8 +4,9 @@ from django_request_mapping import request_mapping
 
 
 @request_mapping('/review')
-class MyView(View):
+class ReviewView(View):
 
-    @request_mapping('/list')
-    def home(self, request):
-        return render(request, 'review.html')
+    @request_mapping('/reviewlist')
+    def reviewlist(self, request):
+        return render(request, 'review/list.html')
+
