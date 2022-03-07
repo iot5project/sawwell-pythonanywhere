@@ -14,7 +14,7 @@ class MyView(View):
     def login(self, request):
         return render(request, 'logins.html')
 
-    @request_mapping('/reguster')
+    @request_mapping('/register')
     def register(self, request):
         return render(request, 'register.html')
 
