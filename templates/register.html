@@ -87,7 +87,8 @@
               </h2>
 
               <div class="entry-content">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="/registerimpl" method="post" role="form" class="php-email-form">
+              {% csrf_token %}
               <div class="form-group mt-3">
                 <input type="text" class="form-control" name="subject" id="id" placeholder="Id" required>
               </div>
