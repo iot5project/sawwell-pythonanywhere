@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.views import View
 from django_request_mapping import request_mapping
 
+from web.models import Cust
+
 
 @request_mapping('')
 class MyView(View):
@@ -46,10 +48,11 @@ class MyView(View):
         context = {};
         try:
             Cust.objects.get(id=id);
+            print("register fail")
         except:
             Cust(id=id, pwd=pwd, name=name, add=add, email=email).save();
-            print("register fail")
-        return render(request, 'home.html');
+            print("register ok")
+        return render(request, 'home.html', context);
 
     @request_mapping('/korean')
     def korean(self, request):
