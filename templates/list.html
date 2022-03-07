@@ -1,7 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 {% load static %}
 
+<script>
+  function showphone(){
+      $('#info_btn_inner').show();
+  }
+  function hidephone(){
+      $('#info_btn_inner').hide();
+  }
+</script>
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -160,14 +168,11 @@ a{
                 <p class="text-sm"><a class="text-black" href="#">review</a></p>
                 <div class="text-sm op-5"> <a class="text-black mr-2" href="#">별점: </a></div>
               </div>
-              <div class="col-md-4 op-7">
-                <div class="row text-center op-7">
-                  <button class="col px-1"> <i class="ion-ios-chatboxes-outline icon-1x"></i> <span class="d-block text-sm">Replys</span> </button>
-                  <button class="col px-1"> <i class="ion-ios-eye-outline icon-1x"></i> <span class="d-block text-sm">Views</span> </button>
-                </div>
-              </div>
             </div>
           </div>
+          <div class="col-md-5" id="noneDiv1" style="display: none;"></div>
+          <button onclick="onDisplay()">Show Reply</button>
+          <button onclick="offDisplay()">Close Reply</button>
           <!-- /End of post 1 -->
           <!-- End of post 2 -->
           <div class="card row-hover pos-relative py-3 px-3 mb-3 border-warning border-top-0 border-right-0 border-bottom-0 rounded-0">
@@ -218,15 +223,32 @@ a{
               </div>
               <div class="col-md-4 op-7">
                 <div class="row text-center op-7">
-                  <button class="col px-1"> <i class="ion-ios-chatboxes-outline icon-1x"></i> <span class="d-block text-sm">Replys</span> </button>
-                  <button class="col px-1"> <i class="ion-ios-eye-outline icon-1x"></i> <span class="d-block text-sm">Views</span> </button>
+                  <button class="col px-4"> <i class="ion-ios-chatboxes-outline icon-1x"></i> <span class="d-block text-sm">Replys</span> </button>
                 </div>
               </div>
             </div>
+            <div class="renew_inpit_box">
+              <strong>reply<i class="icon_mark_point" onclick="showphone()"></i></strong>
+              <!--툴팁-->
+              <div class="info_btn_inner" id="info_btn_inner">
+                <div class="into_btn_box" id="info_btn_box"></div>
+                <p class="btn_close"><a onclick="hidephone()" alt="닫기"></a></p>
+                <dl>
+                  <dt>frfr</dt>
+                  <dd>dd</dd>
+                  <!--수정-->
+                  </dd>dd</dd>
+                </dl>
+                <p class="bin_close02"><a onclick="hidephone()">닫기</a></p>
+              </div>
+            </div>
+            <div close="phone_change_box"></div>
           </div>
+
           <!-- /End of post 4 -->
+        </div>
       </div>
-    </div>
+</div>
     </section>
   </main><!-- End #main -->
 
