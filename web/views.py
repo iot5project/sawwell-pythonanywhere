@@ -47,3 +47,4 @@ class MyView(View):
         return render(request, 'market/fastfood.html')
 
 
+

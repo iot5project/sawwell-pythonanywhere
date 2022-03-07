@@ -10,3 +10,5 @@ class ReviewView(View):
     def reviewlist(self, request):
         return render(request, 'review/list.html')
 
+
+
