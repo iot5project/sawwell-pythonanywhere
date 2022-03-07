@@ -18,9 +18,4 @@ class MyView(View):
     def register(self, request):
         return render(request, 'register.html')
 
-    @request_mapping('/list')
-    def list(self, request):
-        return render(request, 'list.html')
-
-
 
