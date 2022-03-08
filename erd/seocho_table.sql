@@ -7,3 +7,4 @@ CREATE TABLE seocho (
 	categori varchar(100) NULL,
 	food varchar(100) NULL
 );
+
