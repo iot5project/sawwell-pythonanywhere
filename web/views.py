@@ -20,13 +20,14 @@ class MyView(View):
     def loginimpl(self, request):
 
         id = request.POST['id'];
-        pwd = request.POST['pwd'];
+        password = request.POST['password'];
         context = {};
         try:
             cust = Cust.objects.get(id=id);
-            if cust.pwd == pwd:
-                request.session['sessionid'] = cust.id;
-                request.session['sessionname'] = cust.name;
+            if cust.password == password:
+                print("login ok")
+                # request.session['sessionid'] = cust.id;
+                # request.session['sessionname'] = cust.name;
             else:
                 raise Exception;
         except:
