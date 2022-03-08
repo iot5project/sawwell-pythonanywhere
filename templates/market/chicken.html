@@ -238,6 +238,11 @@
       </div>
     </div>
   </div>
+
+<!--  {% for o in objs  %}-->
+<!--  {{ objs.paginator.count|sub:objs.start_index|sub:forloop.counter0|add:1 }}-->
+<!--  {% endfor %}-->
+
     <ul class="pagination justify-content-center">
       <!-- 이전페이지 -->
       {% if question_list.has_previous %}
