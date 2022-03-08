@@ -82,5 +82,9 @@ class MyView(View):
     def fastfood(self, request):
         return render(request, 'market/fastfood.html')
 
-
-
+    @request_mapping('/chart11')
+    def chart11(self,request):
+        context = {
+            'center':'chart11.html'
+        };
+        return render(request,'chart11.html');
