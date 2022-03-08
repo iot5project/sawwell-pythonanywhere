@@ -1,3 +1,4 @@
+from django.core.paginator import Paginator
 from django.shortcuts import render
 from django.views import View
 from django_request_mapping import request_mapping
@@ -40,20 +41,20 @@ class MyView(View):
 
     @request_mapping("/registerimpl", method="post")
     def registerimpl(self, request):
-        id = request.POST['id'];
-        password = request.POST['password'];
-        name = request.POST['name'];
-        address = request.POST['address'];
-        email = request.POST['email'];
-        print(id, password, name, address, email);
-        context = {};
+        id = request.POST['id']
+        password = request.POST['password']
+        name = request.POST['name']
+        address = request.POST['address']
+        email = request.POST['email']
+        print(id, password, name, address, email)
+        context = {}
         try:
-            Cust.objects.get(id=id);
+            Cust.objects.get(id=id)
             print("register fail")
         except:
-            Cust(id=id, password=password, name=name, address=address, email=email).save();
+            Cust(id=id, password=password, name=name, address=address, email=email).save()
             print("register ok")
-        return render(request, 'home.html', context);
+        return render(request, 'home.html', context)
 
     @request_mapping('/korean')
     def korean(self, request):
@@ -61,7 +62,14 @@ class MyView(View):
 
     @request_mapping('/chicken')
     def chicken(self, request):
-        return render(request, 'market/chicken.html')
+        page = request.GET.get('page', '1')
+        market_list = Seocho.objects.order_by('marketno')
+        paginator = Paginator(market_list, 9)
+        page_obj = paginator.get_page(page)
+        context = {
+            'objs': page_obj
+        }
+        return render(request, 'market/chicken.html', context)
 
     @request_mapping('/chinese')
     def chinese(self, request):
@@ -83,25 +91,22 @@ class MyView(View):
     def fastfood(self, request):
         return render(request, 'market/fastfood.html')
 
-
     @request_mapping('/menu')
     def menu(self, request):
         return render(request, 'menu.html')
 
     @request_mapping('/chart11')
-    def chart11(self,request):
-        context = {
-            'center':'chart11.html'
-        };
-        return render(request,'chart11.html');
-
+    def chart11(self, request):
+        return render(request, 'chart11.html')
 
     @request_mapping("/seocho", method="get")
     def all(self, request):
-        objs = Seocho.objects.all();
-        print(objs.query);
+        page = request.GET.get('page', '1')
+        market_list = Seocho.objects.order_by('marketno')
+        paginator = Paginator(market_list, 9)
+        page_obj = paginator.get_page(page)
+        print(page_obj.query)
         context = {
-            'center': 'seocho.html',
-            'objs': objs
-        };
-        return render(request, 'seocho.html',context)
+            'objs': page_obj
+        }
+        return render(request, 'seocho.html', context)
