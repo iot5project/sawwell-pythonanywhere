@@ -107,6 +107,7 @@ class MyView(View):
         page_obj = paginator.get_page(page)
         print(page_obj.query)
         context = {
+            'center': 'seocho.html',
             'objs': page_obj
-        }
-        return render(request, 'seocho.html', context)
+        };
+        return render(request, 'seocho.html',context)
