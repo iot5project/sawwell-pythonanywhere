@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views import View
 from django_request_mapping import request_mapping
 
-from web.models import Cust
+from web.models import Cust, Seocho
 
 
 @request_mapping('')
@@ -20,13 +20,14 @@ class MyView(View):
     def loginimpl(self, request):
 
         id = request.POST['id'];
-        pwd = request.POST['pwd'];
+        password = request.POST['password'];
         context = {};
         try:
             cust = Cust.objects.get(id=id);
-            if cust.pwd == pwd:
-                request.session['sessionid'] = cust.id;
-                request.session['sessionname'] = cust.name;
+            if cust.password == password:
+                print("login ok")
+                # request.session['sessionid'] = cust.id;
+                # request.session['sessionname'] = cust.name;
             else:
                 raise Exception;
         except:
@@ -93,3 +94,14 @@ class MyView(View):
             'center':'chart11.html'
         };
         return render(request,'chart11.html');
+
+
+    @request_mapping("/seocho", method="get")
+    def all(self, request):
+        objs = Seocho.objects.all();
+        print(objs.query);
+        context = {
+            'center': 'seocho.html',
+            'objs': objs
+        };
+        return render(request, 'seocho.html',context)
