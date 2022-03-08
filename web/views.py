@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views import View
 from django_request_mapping import request_mapping
 
-from web.models import Cust
+from web.models import Cust, Seocho
 
 
 @request_mapping('')
@@ -94,3 +94,14 @@ class MyView(View):
             'center':'chart11.html'
         };
         return render(request,'chart11.html');
+
+
+    @request_mapping("/seocho", method="get")
+    def all(self, request):
+        objs = Seocho.objects.all();
+        print(objs.query);
+        context = {
+            'center': 'seocho.html',
+            'objs': objs
+        };
+        return render(request, 'seocho.html',context)

@@ -81,5 +81,15 @@ class Review(models.Model):
     class Meta:
         db_table = 'review'
 
+class Seocho(models.Model):
+    marketno = models.IntegerField(primary_key=True)
+    marketname = models.CharField(max_length=50, blank=True, null=True)
+    ceoname = models.CharField(max_length=50, blank=True, null=True)
+    address = models.CharField(max_length=100, blank=True, null=True)
+    phone = models.CharField(max_length=50, blank=True, null=True)
+    categori = models.CharField(max_length=100, blank=True, null=True)
+    food = models.CharField(max_length=100, blank=True, null=True)
 
+    class Meta:
+        db_table = 'seocho'
 

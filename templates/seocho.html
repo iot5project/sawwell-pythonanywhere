@@ -1,0 +1,24 @@
+<section>
+    <h1 id="GuestH">market List</h1>
+    <table width="100%" border="1">
+        <thead>
+            <tr id="GuestTr">
+                <td>Id</td>
+                <td>Title</td>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for o in objs  %}
+            <tr>
+                <td> {{o.marketname}}</td>
+                <td> {{o.ceoname}} </td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+    <br>
+    <br>
+
+</section>
