@@ -67,7 +67,7 @@ a{
   <header id="header" class="fixed-top header-inner-pages">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <h1 class="logo"><a href="index.html">Saw Well</a></h1>
+      <h1 class="logo"><a href="/">Saw Well</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -116,7 +116,7 @@ a{
                       {% csrf_token %}
                       별점<input type="number" name="star" min="1" max="5"><br>
                       <br>
-                      평가<input type="text" name="review" style="width:400px;height:100px;font-size:10px;"><br>
+                      평가<input type="text" name="content" style="width:400px;height:100px;font-size:10px;"><br>
                       <br>
                     <input type="submit" value="register">
                   </form>
@@ -187,10 +187,10 @@ a{
             </div>
             <button onclick="toggle_div('reply_write1')">write reply</button>
             <div id="reply_write1" style="display: none">
-            <form action="reviewimpl" method="post">
+            <form action="replyimpl" method="post">
               {% csrf_token %}
               <br>
-              reply:<input type="text" name="review" style="width:400px;height:100px;font-size:10px;"><br>
+              reply:<input type="text" name="reply" style="width:400px;height:100px;font-size:10px;"><br>
               <br>
               <input type="submit" value="register">
             </form>
@@ -231,10 +231,10 @@ a{
             </div>
             <button onclick="toggle_div('reply_write2')">write reply</button>
             <div id="reply_write2" style="display: none">
-            <form action="reviewimpl" method="post">
+            <form action="replyimpl" method="post">
               {% csrf_token %}
               <br>
-              reply:<input type="text" name="review" style="width:400px;height:100px;font-size:10px;"><br>
+              reply:<input type="text" name="reply" style="width:400px;height:100px;font-size:10px;"><br>
               <br>
               <input type="submit" value="register">
             </form>
@@ -276,10 +276,10 @@ a{
             </div>
             <button onclick="toggle_div('reply_write3')">write reply</button>
             <div id="reply_write3" style="display: none">
-            <form action="reviewimpl" method="post">
+            <form action="replyimpl" method="post">
               {% csrf_token %}
               <br>
-              reply:<input type="text" name="review" style="width:400px;height:100px;font-size:10px;"><br>
+              reply:<input type="text" name="reply" style="width:400px;height:100px;font-size:10px;"><br>
               <br>
               <input type="submit" value="register">
             </form>
@@ -288,7 +288,8 @@ a{
 <!--/post3-->
 
           <!-- ************End of post 3*************** -->
-          <div class="container-md">
+
+      <div class="container-md">
            <div class="card row-hover pos-relative py-3 px-3 mb-3 border-warning border-top-0 border-right-0 border-bottom-0 rounded-0">
             <div class="row align-items-center">
               <div class="col-md-8 mb-3 mb-sm-0">
@@ -321,13 +322,13 @@ a{
             </div>
             <button onclick="toggle_div('reply_write4')">write reply</button>
             <div id="reply_write4" style="display: none">
-            <form action="reviewimpl" method="post">
-              {% csrf_token %}
-              <br>
-              reply:<input type="text" name="review" style="width:400px;height:100px;font-size:10px;"><br>
-              <br>
-              <input type="submit" value="register">
-            </form>
+                <form action="replyimpl" method="post">
+                  {% csrf_token %}
+                  <br>
+                  reply:<input type="text" name="reply" style="width:400px;height:100px;font-size:10px;"><br>
+                  <br>
+                  <input type="submit" value="register">
+                </form>
             </div>
           </div>
           </div>
