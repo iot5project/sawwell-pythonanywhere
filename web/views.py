@@ -40,17 +40,17 @@ class MyView(View):
     @request_mapping("/registerimpl", method="post")
     def registerimpl(self, request):
         id = request.POST['id'];
-        pwd = request.POST['pwd'];
+        password = request.POST['password'];
         name = request.POST['name'];
-        add = request.POST['add'];
+        address = request.POST['address'];
         email = request.POST['email'];
-        print(id, pwd, name, add, email);
+        print(id, password, name, address, email);
         context = {};
         try:
             Cust.objects.get(id=id);
             print("register fail")
         except:
-            Cust(id=id, pwd=pwd, name=name, add=add, email=email).save();
+            Cust(id=id, password=password, name=name, address=address, email=email).save();
             print("register ok")
         return render(request, 'home.html', context);
 
