@@ -13,8 +13,10 @@ ON m.foodid = f.foodid
 WHERE marketaddress = '서초동';
  
 #음식점 이름이' 음식점 1'인 음식점 가게 이름과 음식이름, 음식가격 조회
-SELECT * 
-FROM market 
+SELECT m.marketname, f.price, f.name
+FROM market m
+INNER JOIN food f
+ON m.foodid = f.foodid
 WHERE marketname = '음식점1';
 
 #마감 시간이 22시 이후인 음식점 이름 검색
@@ -25,7 +27,7 @@ WHERE DATE_FORMAT(close, '%H'  ) > 22;
 # 휴무일이 이번주  금요일인  가게 이름 조회
 SELECT marketname
 FROM market
-WHERE DATE_FORMAT(holiday,'%Y%m%d') = DATE_FORMAT(CURDATE()- WEEKDAY(CURDATE()) + 5, '%Y%m%d');
+WHERE DATE_FORMAT(holiday,'%Y%m%d') = DATE_FORMAT(CURDATE()- (WEEKDAY(CURDATE()) + 5), '%Y%m%d');
 
 # 휴무일이 오늘인 가게 조회 
 SELECT marketname ,holiday 
