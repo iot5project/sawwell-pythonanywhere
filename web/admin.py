@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from web.models import Categori, Cust, Ceo, Food, Market, Reply, Review
+from web.models import Categori, Cust, Ceo, Food, Market, Reply, Review, Seocho
 
 
 class CustAdmin(admin.ModelAdmin):
@@ -31,6 +31,9 @@ class ReplyAdmin(admin.ModelAdmin):
 class ReviewAdmin(admin.ModelAdmin):
     list_display = ('reviewno', 'marketno', 'custno', 'content', 'star', 'regdate')
 
+class SeochoAdmin(admin.ModelAdmin):
+    list_display = ('marketno','marketname','ceoname','address','phone','categori','food')
+
 
 admin.site.register(Cust, CustAdmin)
 admin.site.register(Categori, CategoriAdmin)
@@ -39,3 +42,4 @@ admin.site.register(Market, MarketAdmin)
 admin.site.register(Ceo, CeoAdmin)
 admin.site.register(Reply, ReplyAdmin)
 admin.site.register(Review, ReviewAdmin)
+admin.site.register(Seocho, SeochoAdmin)
