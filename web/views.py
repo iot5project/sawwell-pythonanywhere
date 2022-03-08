@@ -1,3 +1,5 @@
+import logging
+
 from django.shortcuts import render
 from django.views import View
 from django_request_mapping import request_mapping
@@ -33,6 +35,32 @@ class MyView(View):
         except:
             print("login fail")
         return render(request, 'home.html', context);
+
+    @request_mapping("/idfind", method="get")
+    def idfind(self, request):
+        email = request.GET.get('email', False);
+        try:
+            cust = Cust.objects.get(email=email);
+            if cust.email == email:
+                print("idokokok")
+            else:
+                raise Exception;
+        except:
+             print("idnonono")
+        return render(request, 'idFind.html');
+
+    @request_mapping("/pwdfind", method="get")
+    def pwdfind(self, request):
+        id = request.GET.get('id', False);
+        email = request.GET.get('email', False);
+        try:
+            cust = Cust.objects.filter(email=email, id=id);
+            print("pwdokokok")
+            if cust.count() == 0:
+                print("pwdnonono")
+        except:
+            print("")
+        return render(request, 'pwdFind.html');
 
     @request_mapping('/register')
     def register(self, request):
