@@ -1,7 +1,4 @@
-
 from django.core.paginator import Paginator
-import logging
-
 from django.shortcuts import render
 from django.views import View
 from django_request_mapping import request_mapping
@@ -20,23 +17,29 @@ class MyView(View):
     def login(self, request):
         return render(request, 'logins.html')
 
+    @request_mapping('/logout')
+    def logout(self, request):
+        if request.session['sessionid'] is not None:
+            del request.session['sessionid']
+        return render(request, 'home.html')
+
     @request_mapping("/loginimpl", method="post")
     def loginimpl(self, request):
-
         id = request.POST['id']
         password = request.POST['password']
         context = {}
         try:
             cust = Cust.objects.get(id=id)
             if cust.password == password:
-                print("login ok")
-                # request.session['sessionid'] = cust.id;
-                # request.session['sessionname'] = cust.name;
+                data = Cust.objects.get(id=id)
+                request.session['sessionid'] = id
+                html = 'home.html'
             else:
                 raise Exception
         except:
             print("login fail")
-        return render(request, 'home.html', context)
+            html = 'logins.html'
+        return render(request, html, context)
 
     @request_mapping("/idfind", method="get")
     def idfind(self, request):
