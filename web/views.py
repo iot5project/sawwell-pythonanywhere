@@ -17,7 +17,7 @@ class MyView(View):
             'categori': 'categori.html',
             'search': 'search.html'
         }
-        return render(request, 'home.html', context)
+        return render(request, 'common/home.html', context)
 
     @request_mapping('/menu')
     def menu(self, request):
