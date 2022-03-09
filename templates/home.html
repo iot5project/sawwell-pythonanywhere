@@ -64,27 +64,9 @@
           <li><a class="nav-link scrollto" href="/identify/logout">logout</a></li>
           {% endif %}
           <li><a class="nav-link scrollto" href="#services">categori</a></li>
-          <li><a class="nav-link scrollto " href="#portfolio">popular market</a></li>
+          <li><a class="nav-link scrollto " href="#portfolio">popular</a></li>
           <li><a class="nav-link scrollto " href="/review/reviewlist">review</a></li>
-          <li><a class="nav-link scrollto" href="#team">recommand market</a></li>
-          <li><a class="nav-link scrollto" href="/chart11">chart</a></li>
-<!--          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>-->
-<!--            <ul>-->
-<!--              <li><a href="#">Drop Down 1</a></li>-->
-<!--              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>-->
-<!--                <ul>-->
-<!--                  <li><a href="#">Deep Drop Down 1</a></li>-->
-<!--                  <li><a href="#">Deep Drop Down 2</a></li>-->
-<!--                  <li><a href="#">Deep Drop Down 3</a></li>-->
-<!--                  <li><a href="#">Deep Drop Down 4</a></li>-->
-<!--                  <li><a href="#">Deep Drop Down 5</a></li>-->
-<!--                </ul>-->
-<!--              </li>-->
-<!--              <li><a href="#">Drop Down 2</a></li>-->
-<!--              <li><a href="#">Drop Down 3</a></li>-->
-<!--              <li><a href="#">Drop Down 4</a></li>-->
-<!--            </ul>-->
-<!--          </li>-->
+          <li><a class="nav-link scrollto" href="#team">recommand</a></li>
           <li><a class="nav-link scrollto" href="#contact">Search</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -96,8 +78,8 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero">
     <div class="hero-container">
-      <h3>Welcome to <strong>Tempo</strong></h3>
-      <h1>We're Creative Agency</h1>
+      <h3>Welcome to <strong>Saw Well</strong></h3>
+      <h1>We're Recommend Restaurant</h1>
       <h2>We are team of talented designers making websites with Bootstrap</h2>
       <a href="#about" class="btn-get-started scrollto">Get Started</a>
     </div>
@@ -148,310 +130,33 @@
           <h3>Categori</h3>
           <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
         </div>
-
-<!--        <div class="row">-->
-<!--          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">-->
-<!--            <div class="icon-box">-->
-<!--              <div class="icon"><i class="bx bxl-dribbble"></i></div>-->
-<!--              <h4 class="title"><a href="">Lorem Ipsum</a></h4>-->
-<!--              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>-->
-<!--            </div>-->
-<!--          </div>-->
-
-<!--          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">-->
-<!--            <div class="icon-box">-->
-<!--              <div class="icon"><i class="bx bx-file"></i></div>-->
-<!--              <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>-->
-<!--              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>-->
-<!--            </div>-->
-<!--          </div>-->
-
-<!--          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">-->
-<!--            <div class="icon-box">-->
-<!--              <div class="icon"><i class="bx bx-tachometer"></i></div>-->
-<!--              <h4 class="title"><a href="">Magni Dolores</a></h4>-->
-<!--              <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>-->
-<!--            </div>-->
-<!--          </div>-->
-
-<!--          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">-->
-<!--            <div class="icon-box">-->
-<!--              <div class="icon"><i class="bx bx-world"></i></div>-->
-<!--              <h4 class="title"><a href="">Nemo Enim</a></h4>-->
-<!--              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>-->
-<!--            </div>-->
-<!--          </div>-->
       </div>
     </section><!-- End Services Section -->
 
-    <!-- ======= Features Section ======= -->
-    <section id="features" class="features">
-      <div class="container">
+    {% if categori != None %}
+        {% include categori %}
+    {% else %}
+        <section></section>
+    {% endif %}
 
-        <div class="row">
-          <div class="col-lg-3 col-md-3 col-6 col-6">
-            <div class="icon-box">
-              <i class="ri-store-line" style="color: #ffbb2c;"></i>
-              <h3><a href="/market/chicken">치킨</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-3 col-6">
-            <div class="icon-box">
-              <i class="ri-bar-chart-box-line" style="color: #5578ff;"></i>
-              <h3><a href="/market/chinese">중식</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-3 col-6 mt-4 mt-md-0">
-            <div class="icon-box">
-              <i class="ri-calendar-todo-line" style="color: #e80368;"></i>
-              <h3><a href="/market/dessert">디저트</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-3 col-6 mt-4 mt-lg-0">
-            <div class="icon-box">
-              <i class="ri-paint-brush-line" style="color: #e361ff;"></i>
-              <h3><a href="/market/fastfood">패스트푸드</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-3 col-6 mt-4">
-            <div class="icon-box">
-              <i class="ri-database-2-line" style="color: #47aeff;"></i>
-              <h3><a href="/market/pizza">피자</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-3 col-6 mt-4">
-            <div class="icon-box">
-              <i class="ri-gradienter-line" style="color: #ffa76e;"></i>
-              <h3><a href="/market/western">미국 음식</a></h3>
-            </div>
-          </div>
-        </div>
+    {% if popular != None %}
+        {% include popular %}
+    {% else %}
+        <section></section>
+    {% endif %}
 
-      </div>
-    </section><!-- End Features Section -->
+    {% if recommend != None %}
+        {% include recommend %}
+    {% else %}
+        <section></section>
+    {% endif %}
 
-    <!-- ======= Cta Section ======= -->
-    <section id="cta" class="cta">
-      <div class="container">
-
-        <div class="text-center">
-          <h3>Call To Action</h3>
-          <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <a class="cta-btn" href="#">Call To Action</a>
-        </div>
-
-      </div>
-    </section><!-- End Cta Section -->
-
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Popular</h2>
-          <h3>Check our <span>Popular Market</span></h3>
-          <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="row portfolio-container">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <img src="static/assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>App 1</h4>
-              <p>App</p>
-              <a href="src/assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <img src="static/assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Web 3</h4>
-              <p>Web</p>
-              <a href="static/assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <img src="static/assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>App 2</h4>
-              <p>App</p>
-              <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <img src="static/assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Card 2</h4>
-              <p>Card</p>
-              <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <img src="static/assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Web 2</h4>
-              <p>Web</p>
-              <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <img src="static/assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>App 3</h4>
-              <p>App</p>
-              <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <img src="static/assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Card 1</h4>
-              <p>Card</p>
-              <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <img src="static/assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Card 3</h4>
-              <p>Card</p>
-              <a href="% static {assets/img/portfolio/portfolio-8.jpg} %" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <img src="static/assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Web 3</h4>
-              <p>Web</p>
-              <a href="assets/img/portfolio/portfolio-9.jpg'" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Portfolio Section -->
-
-    <!-- ======= Team Section ======= -->
-    <section id="team" class="team">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>recommand</h2>
-          <h3>recommand <span>Market</span></h3>
-        </div>
-        <div>
-            <div class="map_wrap">
-              <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="text-center">
-                <p>
-                  <button id="choose_when_all" style="width:30%; height: 150px">전체</button>
-                  <button id="choose_when_cook" style="width:30%; height: 150px">요리</button>
-                  <button id="choose_when_meal" style="width:30%; height: 150px">간식</button>
-                </p>
-                <p>
-                  <button id="choose_menu_all" style="width:24%; height: 150px">전체</button>
-                  <button id="choose_menu_korea" style="width:24%; height: 150px">한식</button>
-                  <button id="choose_menu_japan" style="width: 24%; height: 150px">일식</button>
-                  <button id="choose_menu_america" style="width:24%; height: 150px">양식</button>
-                </p>
-                <p>
-                  <button id="choose_who_all" style="width:24%; height: 150px">전체</button>
-                  <button id="choose_who_alone" style="width:24%; height: 150px">혼자</button>
-                  <button id="choose_who_friend " style="width:24%; height: 150px">친구</button>
-                  <button id="choose_who_familliy " style="width:24%; height: 150px">가족</button>
-                </p>
-              <div id="exampleimgs">
-                <img src="static/assets/img/result.PNG" style="width:100%;height:400px;">
-              </div>
-
-                <button id="choose_when_categori" type="submit" style="width:50%; height:220px;">메뉴 추천 버튼</button>
-              </div>
-
-            </form>
-              <div id="exampleimg">
-                <img src="static/assets/img/example/11.PNG" style="width:100%;height:770px;">
-              </div>
-            </div>
-        </div>
-      </div>
-    </section><!-- End Team Section -->
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container">
-        <div class="section-title">
-          <h2>Search</h2>
-          <h3>Search <span>Market</span></h3>
-        </div>
-        <div>
-            <div class="map_wrap">
-              <div id="map" style="width:100%;height:270px;"></div>
-             <div class="hAddr">
-              <span id="centerAddr"></span>
-             </div>
-          </div>
-        <div class="row mt-5">
-          <div class="col-lg-4">
-            <div class="info">
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>A108 Adam Street, New York, NY 535022</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-8 mt-5 mt-lg-0">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="id" placeholder="Id" required>
-              </div>
-              <div class="text-center"><button type="submit">Search</button></div>
-            </form>
-          </div>
-        </div>
-      </div>
-      </div>
-    </section>
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/export-data.js"></script>
-    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="{% static 'assets/js/chart.js' %}"></script>
-    <section>
-      <div id="container"></div>
-    </section><!-- End Contact Section -->
-  </main><!-- End #main -->
+    {% if search != None %}
+        {% include search %}
+    {% else %}
+        <section></section>
+    {% endif %}
+  </main>
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
@@ -539,6 +244,7 @@
 
   <!--  Kakao api-->
   <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0da477b4f5581bc9b63f80bedc65f1c1"></script>
+
   <!-- Template kakao JS File -->
   <script src="{% static 'assets/js/kakao.js' %}"></script>
 
