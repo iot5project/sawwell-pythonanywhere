@@ -34,11 +34,6 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-  <style>
-    .subject{
-
-    }
-  </style>
 </head>
 
 <body>
@@ -47,15 +42,14 @@
   <header id="header" class="fixed-top header-inner-pages">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <h1 class="logo"><a href="index.html">Saw Well</a></h1>
+      <h1 class="logo"><a href="/">Saw Well</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto " href="/">Home</a></li>
-          <li><a class="active" href="/login">Login</a></li>
-          <li><a class="nav-link scrollto" href="/register">Register</a> </li>
+          <li><a class="active" href="/identify/register">Register</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -71,9 +65,9 @@
 
         <ol>
           <li><a href="/">Home</a></li>
-          <li><a href="/login">Login</a></li>
-          <li><a href="/register">register</a></li>
+          <li>Register</li>
         </ol>
+        <h2>register</h2>
 
       </div>
     </section><!-- End Breadcrumbs -->
@@ -88,18 +82,32 @@
 
             <article class="entry">
 
+              <h2 class="entry-title">
+                <a href="blog-single.html">register</a>
+              </h2>
+
               <div class="entry-content">
-                <form action="/pwdfind" role="form" class="php-email-form">
-                  <h3>PASSWORD 찾기</h3><br>
-                    <div class="form-group mt-3">
-                      <input type="text" class="form-control" name="id" id="id" placeholder="아이디를 입력하세요." required>
-                    </div>
-                    <div class="form-group mt-3">
-                      <input type="text" class="form-control" name="email" id="email" placeholder="이메일을 입력하세요." required>
-                    </div>
-                  <br>
-                  <div class="text-center"><button>Password 찾기</button></div><br>
-                </form>
+            <form action="/registerimpl" method="post" role="form" class="php-email-form">
+              {% csrf_token %}
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="id" id="id" placeholder="Id" required>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="password" id="password" placeholder="Password" required>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="name" id="name" placeholder="Name" required>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="address" id="address" placeholder="Address" required>
+              </div>
+              <div  class="form-group mt-3">
+                <input type="text" class="form-control" name="email" id="email" placeholder="Email" required>
+              </div>
+              <br>
+              <div style="display: inline-block" class="text-center"><button type="submit">register</button></div>
+              <div style="display: inline-block" class="text-center"><button type="reset">reset</button></div>
+            </form>
               </div>
             </article>
           </div>
@@ -155,6 +163,7 @@
               <input type="email" name="email"><input type="submit" value="Subscribe">
             </form>
           </div>
+
         </div>
       </div>
     </div>
@@ -190,6 +199,7 @@
   <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
   <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
   <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+
 
   <!-- Template Main JS File -->
   <script src="{% static 'assets/js/main.js' %}"></script>
