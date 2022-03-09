@@ -1,5 +1,7 @@
 from web.db import Db, Sql
 
+con = None
+cursor = None
 try:
     con = Db().getConnection()
     cursor = con.cursor()
@@ -10,4 +12,4 @@ try:
 except:
     print('Error')
 finally:
-    Db().close(con,cursor)
+    Db().close(con, cursor)

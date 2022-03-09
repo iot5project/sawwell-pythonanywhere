@@ -23,46 +23,46 @@ class MyView(View):
     @request_mapping("/loginimpl", method="post")
     def loginimpl(self, request):
 
-        id = request.POST['id'];
-        password = request.POST['password'];
-        context = {};
+        id = request.POST['id']
+        password = request.POST['password']
+        context = {}
         try:
-            cust = Cust.objects.get(id=id);
+            cust = Cust.objects.get(id=id)
             if cust.password == password:
                 print("login ok")
                 # request.session['sessionid'] = cust.id;
                 # request.session['sessionname'] = cust.name;
             else:
-                raise Exception;
+                raise Exception
         except:
             print("login fail")
-        return render(request, 'home.html', context);
+        return render(request, 'home.html', context)
 
     @request_mapping("/idfind", method="get")
     def idfind(self, request):
-        email = request.GET.get('email', False);
+        email = request.GET.get('email', False)
         try:
-            cust = Cust.objects.get(email=email);
+            cust = Cust.objects.get(email=email)
             if cust.email == email:
                 print("idokokok")
             else:
-                raise Exception;
+                raise Exception
         except:
              print("idnonono")
-        return render(request, 'idFind.html');
+        return render(request, 'idFind.html')
 
     @request_mapping("/pwdfind", method="get")
     def pwdfind(self, request):
-        id = request.GET.get('id', False);
-        email = request.GET.get('email', False);
+        id = request.GET.get('id', False)
+        email = request.GET.get('email', False)
         try:
-            cust = Cust.objects.filter(email=email, id=id);
+            cust = Cust.objects.filter(email=email, id=id)
             print("pwdokokok")
             if cust.count() == 0:
                 print("pwdnonono")
         except:
             print("")
-        return render(request, 'pwdFind.html');
+        return render(request, 'pwdFind.html')
 
     @request_mapping('/register')
     def register(self, request):
@@ -138,5 +138,5 @@ class MyView(View):
         context = {
             'center': 'seocho.html',
             'objs': page_obj
-        };
-        return render(request, 'seocho.html',context)
+        }
+        return render(request, 'seocho.html', context)
