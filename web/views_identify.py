@@ -9,7 +9,31 @@ class IdentifyView(View):
 
     @request_mapping('/login')
     def login(self, request):
-        return render(request, 'identify/logins.html')
+        context = {
+            'center': 'identify/logins.html'
+        }
+        return render(request, 'common/main.html', context)
+
+    @request_mapping("/idfind")
+    def idfind(self, request):
+        context = {
+            'center': 'identify/idFind.html'
+        }
+        return render(request, 'common/main.html', context)
+
+    @request_mapping("/pwdfind")
+    def pwdfind(self, request):
+        context = {
+            'center': 'identify/pwdFind.html'
+        }
+        return render(request, 'common/main.html', context)
+
+    @request_mapping('/register')
+    def register(self, request):
+        context = {
+            'center': 'identify/register.html'
+        }
+        return render(request, 'common/main.html', context)
 
     @request_mapping('/logout')
     def logout(self, request):
@@ -31,25 +55,27 @@ class IdentifyView(View):
             else:
                 raise Exception
         except:
-            print("login fail")
-            html = 'identify/logins.html'
+            html = 'identify/main.html'
+            context['center'] = 'identify/logins'
         return render(request, html, context)
 
-    @request_mapping("/idfind", method="get")
-    def idfind(self, request):
+    @request_mapping("/idfindimpl", method="get")
+    def idfindimpl(self, request):
         email = request.GET.get('email', False)
+        context = {}
         try:
             cust = Cust.objects.get(email=email)
             if cust.email == email:
                 print("idokokok")
+                context = 'idFind.html'
             else:
                 raise Exception
         except:
              print("idnonono")
-        return render(request, 'identify/idFind.html')
+        return render(request, 'identify/main.html', context)
 
-    @request_mapping("/pwdfind", method="get")
-    def pwdfind(self, request):
+    @request_mapping("/pwdfindimpl", method="get")
+    def pwdfindimpl(self, request):
         id = request.GET.get('id', False)
         email = request.GET.get('email', False)
         try:
@@ -60,10 +86,6 @@ class IdentifyView(View):
         except:
             print("")
         return render(request, 'identify/pwdFind.html')
-
-    @request_mapping('/register')
-    def register(self, request):
-        return render(request, 'identify/register.html')
 
     @request_mapping("/registerimpl", method="post")
     def registerimpl(self, request):
