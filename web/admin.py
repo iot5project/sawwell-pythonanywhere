@@ -31,8 +31,9 @@ class ReplyAdmin(admin.ModelAdmin):
 class ReviewAdmin(admin.ModelAdmin):
     list_display = ('reviewno', 'marketno', 'custno', 'content', 'star', 'regdate')
 
+
 class SeochoAdmin(admin.ModelAdmin):
-    list_display = ('marketno','marketname','ceoname','address','phone','categori','food')
+    list_display = ('marketno', 'marketname', 'ceoname', 'address', 'phone', 'categori', 'food')
 
 
 admin.site.register(Cust, CustAdmin)

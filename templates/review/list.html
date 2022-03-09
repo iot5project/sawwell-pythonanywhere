@@ -196,19 +196,18 @@ a{
           </div>
             <button onclick="toggle_div('reply_write1')">write reply</button>
             <div id="reply_write1" style="display: none">
-                <form action="replyimpl" method="post">
-                  {% csrf_token %}
-                  <br>
-                  reply:<input type="text" name="reply" style="width:400px;height:100px;font-size:10px;"><br>
-                  <br>
-                  <input type="submit" value="register">
-                </form>
+              <form action="replyimpl" method="post">
+                {% csrf_token %}
+                <br>
+                reply:<input type="text" name="reply" style="width:400px;height:100px;font-size:10px;"><br>
+                <br>
+                <input type="submit" value="register">
+              </form>
             </div>
           </div>
-          </div>
-            </form>
-            </div>
-          </div>
+        </div>
+      </div>
+    </div>
 <!--/post1-->
 <!--post2-->
       <div class="container-md">
@@ -254,7 +253,6 @@ a{
                   <input type="submit" value="register">
                 </form>
             </div>
-          </div>
           </div>
 
 <!--/post2-->
@@ -303,7 +301,6 @@ a{
                   <input type="submit" value="register">
                 </form>
             </div>
-          </div>
           </div>
 
 <!--/post3-->
@@ -354,11 +351,8 @@ a{
                 </form>
             </div>
           </div>
-          </div>
-
           <!-- ************End of post 4*************** -->
-      </div>
-      </div>
+
     </section>
   </main><!-- End #main -->
 
