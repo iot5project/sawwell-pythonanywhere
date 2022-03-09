@@ -11,7 +11,13 @@ class MyView(View):
 
     @request_mapping('/')
     def home(self, request):
-        return render(request, 'home.html')
+        context = {
+            'recommend': 'recommend.html',
+            'popular': 'popular.html',
+            'categori': 'categori.html',
+            'search': 'search.html'
+        }
+        return render(request, 'home.html', context)
 
     @request_mapping('/menu')
     def menu(self, request):
