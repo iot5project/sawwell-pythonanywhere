@@ -34,6 +34,11 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <style>
+    .subject{
+
+    }
+  </style>
 </head>
 
 <body>
@@ -49,8 +54,8 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto " href="/">Home</a></li>
-          <li><a class="active" href="/login">Login</a></li>
-          <li><a class="nav-link scrollto" href="/register">Register</a> </li>
+          <li><a class="active" href="/identify/login">Login</a></li>
+          <li><a class="nav-link scrollto" href="/identify/register">Register</a> </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -69,7 +74,6 @@
           <li><a href="/login">Login</a></li>
           <li><a href="/register">register</a></li>
         </ol>
-        <h2>login</h2>
 
       </div>
     </section><!-- End Breadcrumbs -->
@@ -84,24 +88,18 @@
 
             <article class="entry">
 
-              <h2 class="entry-title">
-                <a href="blog-single.html">login</a>
-              </h2>
-
               <div class="entry-content">
-                <form action="/loginimpl" method="post" role="form" class="php-email-form">
-                  {% csrf_token %}
-                  <div class="form-group mt-3">
-                    <input type="text" class="form-control" name="id" id="id" placeholder="Id" required>
-                  </div>
-                  <div class="form-group mt-3">
-                    <input type="text" class="form-control" name="password" id="password" placeholder="Password" required>
-                  </div>
+                <form action="/pwdfind" role="form" class="php-email-form">
+                  <h3>PASSWORD 찾기</h3><br>
+                    <div class="form-group mt-3">
+                      <input type="text" class="form-control" name="id" id="id" placeholder="아이디를 입력하세요." required>
+                    </div>
+                    <div class="form-group mt-3">
+                      <input type="text" class="form-control" name="email" id="email" placeholder="이메일을 입력하세요." required>
+                    </div>
                   <br>
-                  <div style="display: inline-block" class="text-center"><button type="submit">login</button></div><br>
+                  <div class="text-center"><button>Password 찾기</button></div><br>
                 </form>
-                <div style="display: inline-block" class="text-center"><button><a href="/idfind">idfind</a></button></div>
-                <div style="display: inline-block" class="text-center"><button><a href="/pwdfind">pwdfind</a></button></div>
               </div>
             </article>
           </div>
@@ -157,7 +155,6 @@
               <input type="email" name="email"><input type="submit" value="Subscribe">
             </form>
           </div>
-
         </div>
       </div>
     </div>
