@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.views import View
 from django_request_mapping import request_mapping
-from webproject.web.models import Cust
+
+from web.models import Cust
 
 
 @request_mapping('/identify')
@@ -59,14 +60,14 @@ class IdentifyView(View):
             context['center'] = 'identify/logins.html'
         return render(request, html, context)
 
-    @request_mapping("/idfindimpl", method="get")
+    @request_mapping("/idfindimpl", method="post")
     def idfindimpl(self, request):
         email = request.GET.get('email', False);
         context = {}
         try:
             cust = Cust.objects.get(email=email);
             if cust.email == email:
-                context['center'] = 'OK_idfind.html'
+                context['center'] = 'identify/OK_idfind.html'
                 context['Find_id'] = cust.id
             else:
                 raise Exception;
@@ -74,7 +75,7 @@ class IdentifyView(View):
              print("idnonono")
         return render(request, 'common/main.html', context);
 
-    @request_mapping("/pwdfindimpl", method="get")
+    @request_mapping("/pwdfindimpl", method="post")
     def pwdfindimpl(self, request):
         id = request.GET.get('id', False);
         email = request.GET.get('email', False);
@@ -82,7 +83,7 @@ class IdentifyView(View):
         try:
             cust = Cust.objects.get(id=id);
             if cust.email == email:
-                context['center'] = 'OK_pwdfind.html'
+                context['center'] = 'identify/OK_pwdfind.html'
                 context['Find_pwd'] = cust.password
             else:
                 raise Exception;
