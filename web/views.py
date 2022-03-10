@@ -1,12 +1,9 @@
-
 from django.core.paginator import Paginator
-import logging
-
 from django.shortcuts import render
 from django.views import View
 from django_request_mapping import request_mapping
 
-from web.models import Cust, Seocho
+from web.models import Seocho
 
 
 @request_mapping('')
@@ -14,6 +11,7 @@ class MyView(View):
 
     @request_mapping('/')
     def home(self, request):
+<<<<<<< HEAD
         return render(request, 'home.html')
 
     @request_mapping('/login')
@@ -100,30 +98,15 @@ class MyView(View):
         market_list = Seocho.objects.order_by('marketno')
         paginator = Paginator(market_list, 9)
         page_obj = paginator.get_page(page)
+=======
+>>>>>>> 7a8e31baba5a6d07d74f069ef849d3a3161acb4d
         context = {
-            'objs': page_obj
+            'recommend': 'recommend.html',
+            'popular': 'popular.html',
+            'categori': 'categori.html',
+            'search': 'search.html'
         }
-        return render(request, 'market/chicken.html', context)
-
-    @request_mapping('/chinese')
-    def chinese(self, request):
-        return render(request, 'market/chinesefood.html')
-
-    @request_mapping('/dessert')
-    def dessert(self, request):
-        return render(request, 'market/dessert.html')
-
-    @request_mapping('/pizza')
-    def pizza(self, request):
-        return render(request, 'market/pizza.html')
-
-    @request_mapping('/western')
-    def western(self, request):
-        return render(request, 'market/westernfood.html')
-
-    @request_mapping('/fastfood')
-    def fastfood(self, request):
-        return render(request, 'market/fastfood.html')
+        return render(request, 'common/home.html', context)
 
     @request_mapping('/menu')
     def menu(self, request):
@@ -143,5 +126,5 @@ class MyView(View):
         context = {
             'center': 'seocho.html',
             'objs': page_obj
-        };
-        return render(request, 'seocho.html',context)
+        }
+        return render(request, 'seocho.html', context)

@@ -59,7 +59,14 @@ a{
 .text-black, .text-hover-black:hover {
     color: #000 !important;
 }
+.container-md{
+  display:table;
+  width:1300px;
+  height:70px;
+  margin-bottom:10px;
+  padding:10px;
 
+}
 </style>
 <body>
 
@@ -154,8 +161,8 @@ a{
             </div>
           </div>
 <!--post1-->
-          <div class="container-md">
-          <div class="card row-hover pos-relative py-3 px-3 mb-3 border-warning border-top-0 border-right-0 border-bottom-0 rounded-0">
+      <div class="container-md">
+           <div class="card row-hover pos-relative py-3 px-3 mb-3 border-warning border-top-0 border-right-0 border-bottom-0 rounded-0">
             <div class="row align-items-center">
               <div class="col-md-8 mb-3 mb-sm-0">
                 <h5>
@@ -172,8 +179,9 @@ a{
               </div>
             </div>
           </div>
-        </div>
-          <!-- /post1 toggle/ -->
+
+          <!-- /post4 toggle/ -->
+      <div class="container-md">
           <div id="reply1" style="display: none">
             <h3>REPLY</h3>
             <div class="card row-hover pos-relative py-3 px-3 mb-3 border-warning border-top-0 border-right-0 border-bottom-0 rounded-0">
@@ -185,20 +193,24 @@ a{
                 <p class="text-sm"><a class="text-black" href="#">reply</a></p></div>
               </div>
             </div>
+          </div>
             <button onclick="toggle_div('reply_write1')">write reply</button>
             <div id="reply_write1" style="display: none">
-            <form action="replyimpl" method="post">
-              {% csrf_token %}
-              <br>
-              reply:<input type="text" name="reply" style="width:400px;height:100px;font-size:10px;"><br>
-              <br>
-              <input type="submit" value="register">
-            </form>
+              <form action="replyimpl" method="post">
+                {% csrf_token %}
+                <br>
+                reply:<input type="text" name="reply" style="width:400px;height:100px;font-size:10px;"><br>
+                <br>
+                <input type="submit" value="register">
+              </form>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
 <!--/post1-->
 <!--post2-->
-        <div class="container-md">
+      <div class="container-md">
            <div class="card row-hover pos-relative py-3 px-3 mb-3 border-warning border-top-0 border-right-0 border-bottom-0 rounded-0">
             <div class="row align-items-center">
               <div class="col-md-8 mb-3 mb-sm-0">
@@ -216,8 +228,9 @@ a{
               </div>
             </div>
           </div>
-      </div>
-          <!-- /post2 toggle/ -->
+
+          <!-- /post4 toggle/ -->
+      <div class="container-md">
           <div id="reply2" style="display: none">
             <h3>REPLY</h3>
             <div class="card row-hover pos-relative py-3 px-3 mb-3 border-warning border-top-0 border-right-0 border-bottom-0 rounded-0">
@@ -229,21 +242,23 @@ a{
                 <p class="text-sm"><a class="text-black" href="#">reply</a></p></div>
               </div>
             </div>
+          </div>
             <button onclick="toggle_div('reply_write2')">write reply</button>
             <div id="reply_write2" style="display: none">
-            <form action="replyimpl" method="post">
-              {% csrf_token %}
-              <br>
-              reply:<input type="text" name="reply" style="width:400px;height:100px;font-size:10px;"><br>
-              <br>
-              <input type="submit" value="register">
-            </form>
+                <form action="replyimpl" method="post">
+                  {% csrf_token %}
+                  <br>
+                  reply:<input type="text" name="reply" style="width:400px;height:100px;font-size:10px;"><br>
+                  <br>
+                  <input type="submit" value="register">
+                </form>
             </div>
           </div>
+
 <!--/post2-->
 
 <!--post3-->
-          <div class="container-md">
+      <div class="container-md">
            <div class="card row-hover pos-relative py-3 px-3 mb-3 border-warning border-top-0 border-right-0 border-bottom-0 rounded-0">
             <div class="row align-items-center">
               <div class="col-md-8 mb-3 mb-sm-0">
@@ -261,8 +276,9 @@ a{
               </div>
             </div>
           </div>
-          </div>
-          <!-- /post3 toggle/ -->
+
+          <!-- /post4 toggle/ -->
+      <div class="container-md">
           <div id="reply3" style="display: none">
             <h3>REPLY</h3>
             <div class="card row-hover pos-relative py-3 px-3 mb-3 border-warning border-top-0 border-right-0 border-bottom-0 rounded-0">
@@ -274,17 +290,19 @@ a{
                 <p class="text-sm"><a class="text-black" href="#">reply</a></p></div>
               </div>
             </div>
+          </div>
             <button onclick="toggle_div('reply_write3')">write reply</button>
             <div id="reply_write3" style="display: none">
-            <form action="replyimpl" method="post">
-              {% csrf_token %}
-              <br>
-              reply:<input type="text" name="reply" style="width:400px;height:100px;font-size:10px;"><br>
-              <br>
-              <input type="submit" value="register">
-            </form>
+                <form action="replyimpl" method="post">
+                  {% csrf_token %}
+                  <br>
+                  reply:<input type="text" name="reply" style="width:400px;height:100px;font-size:10px;"><br>
+                  <br>
+                  <input type="submit" value="register">
+                </form>
             </div>
           </div>
+
 <!--/post3-->
 
           <!-- ************End of post 3*************** -->
@@ -309,6 +327,7 @@ a{
           </div>
 
           <!-- /post4 toggle/ -->
+      <div class="container-md">
           <div id="reply4" style="display: none">
             <h3>REPLY</h3>
             <div class="card row-hover pos-relative py-3 px-3 mb-3 border-warning border-top-0 border-right-0 border-bottom-0 rounded-0">
@@ -320,6 +339,7 @@ a{
                 <p class="text-sm"><a class="text-black" href="#">reply</a></p></div>
               </div>
             </div>
+          </div>
             <button onclick="toggle_div('reply_write4')">write reply</button>
             <div id="reply_write4" style="display: none">
                 <form action="replyimpl" method="post">
@@ -331,10 +351,8 @@ a{
                 </form>
             </div>
           </div>
-          </div>
           <!-- ************End of post 4*************** -->
-      </div>
-      </div>
+
     </section>
   </main><!-- End #main -->
 
