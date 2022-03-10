@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views import View
 from django_request_mapping import request_mapping
 
-from webproject.web.models import Cust, Market, Review, Reply
+from web.models import Cust, Market, Review, Reply
 
 
 @request_mapping('/review')
