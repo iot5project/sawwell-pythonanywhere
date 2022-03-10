@@ -61,31 +61,34 @@ class IdentifyView(View):
 
     @request_mapping("/idfindimpl", method="get")
     def idfindimpl(self, request):
-        email = request.GET.get('email', False)
+        email = request.GET.get('email', False);
         context = {}
         try:
-            cust = Cust.objects.get(email=email)
+            cust = Cust.objects.get(email=email);
             if cust.email == email:
-                print("idokokok")
-                context = 'idFind.html'
+                context['center'] = 'OK_idfind.html'
+                context['Find_id'] = cust.id
             else:
-                raise Exception
+                raise Exception;
         except:
              print("idnonono")
-        return render(request, 'identify/main.html', context)
+        return render(request, 'common/main.html', context);
 
     @request_mapping("/pwdfindimpl", method="get")
     def pwdfindimpl(self, request):
-        id = request.GET.get('id', False)
-        email = request.GET.get('email', False)
+        id = request.GET.get('id', False);
+        email = request.GET.get('email', False);
+        context = {}
         try:
-            cust = Cust.objects.filter(email=email, id=id)
-            print("pwdokokok")
-            if cust.count() == 0:
-                print("pwdnonono")
+            cust = Cust.objects.get(id=id);
+            if cust.email == email:
+                context['center'] = 'OK_pwdfind.html'
+                context['Find_pwd'] = cust.password
+            else:
+                raise Exception;
         except:
-            print("")
-        return render(request, 'identify/pwdFind.html')
+            print("pwdnonono")
+        return render(request, 'common/main.html', context);
 
     @request_mapping("/registerimpl", method="post")
     def registerimpl(self, request):
