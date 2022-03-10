@@ -41,28 +41,33 @@ class MyView(View):
     @request_mapping("/idfind", method="get")
     def idfind(self, request):
         email = request.GET.get('email', False);
+        context = {}
         try:
             cust = Cust.objects.get(email=email);
             if cust.email == email:
-                print("idokokok")
+                context['center'] = 'OK_idfind.html'
+                context['Find_id'] = cust.id
             else:
                 raise Exception;
         except:
              print("idnonono")
-        return render(request, 'idFind.html');
+        return render(request, 'idFind.html', context);
 
     @request_mapping("/pwdfind", method="get")
     def pwdfind(self, request):
         id = request.GET.get('id', False);
         email = request.GET.get('email', False);
+        context = {}
         try:
-            cust = Cust.objects.filter(email=email, id=id);
-            print("pwdokokok")
-            if cust.count() == 0:
-                print("pwdnonono")
+            cust = Cust.objects.get(id=id);
+            if cust.email == email:
+                context['center'] = 'OK_pwdfind.html'
+                context['Find_pwd'] = cust.password
+            else:
+                raise Exception;
         except:
-            print("")
-        return render(request, 'pwdFind.html');
+            print("pwdnonono")
+        return render(request, 'pwdFind.html', context);
 
     @request_mapping('/register')
     def register(self, request):
