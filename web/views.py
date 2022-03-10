@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.views import View
 from django_request_mapping import request_mapping
 
-from web.models import Seocho
+from web.models import Seocho, Cust
 
 
 @request_mapping('')
@@ -11,7 +11,6 @@ class MyView(View):
 
     @request_mapping('/')
     def home(self, request):
-<<<<<<< HEAD
         return render(request, 'home.html')
 
     @request_mapping('/login')
@@ -21,32 +20,32 @@ class MyView(View):
     @request_mapping("/loginimpl", method="post")
     def loginimpl(self, request):
 
-        id = request.POST['id'];
-        password = request.POST['password'];
-        context = {};
+        id = request.POST['id']
+        password = request.POST['password']
+        context = {}
         try:
-            cust = Cust.objects.get(id=id);
+            cust = Cust.objects.get(id=id)
             if cust.password == password:
                 print("login ok")
                 # request.session['sessionid'] = cust.id;
                 # request.session['sessionname'] = cust.name;
             else:
-                raise Exception;
+                raise Exception
         except:
             print("login fail")
-        return render(request, 'home.html', context);
+        return render(request, 'home.html', context)
 
     @request_mapping("/idfind", method="get")
     def idfind(self, request):
-        email = request.GET.get('email', False);
+        email = request.GET.get('email', False)
         context = {}
         try:
-            cust = Cust.objects.get(email=email);
+            cust = Cust.objects.get(email=email)
             if cust.email == email:
                 context['center'] = 'OK_idfind.html'
                 context['Find_id'] = cust.id
             else:
-                raise Exception;
+                raise Exception
         except:
              print("idnonono")
         return render(request, 'idFind.html', context);
@@ -98,8 +97,6 @@ class MyView(View):
         market_list = Seocho.objects.order_by('marketno')
         paginator = Paginator(market_list, 9)
         page_obj = paginator.get_page(page)
-=======
->>>>>>> 7a8e31baba5a6d07d74f069ef849d3a3161acb4d
         context = {
             'recommend': 'recommend.html',
             'popular': 'popular.html',
