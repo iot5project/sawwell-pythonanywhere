@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views import View
 from django_request_mapping import request_mapping
-from web.models import Cust
+from webproject.web.models import Cust
 
 
 @request_mapping('/identify')
