@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import View
 from django_request_mapping import request_mapping
 from web.models import Cust
@@ -39,7 +39,7 @@ class IdentifyView(View):
     def logout(self, request):
         if request.session['sessionid'] is not None:
             del request.session['sessionid']
-        return render(request, 'home.html')
+        return render(request, 'common/home.html')
 
     @request_mapping("/loginimpl", method="post")
     def loginimpl(self, request):
@@ -51,12 +51,12 @@ class IdentifyView(View):
             if cust.password == password:
                 data = Cust.objects.get(id=id)
                 request.session['sessionid'] = id
-                html = 'home.html'
+                html = 'common/home.html'
             else:
                 raise Exception
         except:
-            html = 'identify/main.html'
-            context['center'] = 'identify/logins'
+            html = 'common/main.html'
+            context['center'] = 'identify/logins.html'
         return render(request, html, context)
 
     @request_mapping("/idfindimpl", method="get")
@@ -102,4 +102,4 @@ class IdentifyView(View):
         except:
             Cust(id=id, password=password, name=name, address=address, email=email).save()
             print("register ok")
-        return render(request, 'home.html', context)
+        return render(request, 'common/home.html', context)
