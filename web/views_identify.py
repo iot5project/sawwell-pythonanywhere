@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.views import View
 from django_request_mapping import request_mapping
 
@@ -62,33 +62,35 @@ class IdentifyView(View):
 
     @request_mapping("/idfindimpl", method="post")
     def idfindimpl(self, request):
-        email = request.GET.get('email', False);
+        email = request.POST.get('email', False)
         context = {}
         try:
-            cust = Cust.objects.get(email=email);
+            cust = Cust.objects.get(email=email)
             if cust.email == email:
                 context['center'] = 'identify/OK_idfind.html'
                 context['Find_id'] = cust.id
             else:
-                raise Exception;
+                raise Exception
         except:
-             print("idnonono")
-        return render(request, 'common/main.html', context);
+            context['center'] = 'identify/idfind.html'
+            context['error'] = 'error'
+        return render(request, 'common/main.html', context)
 
     @request_mapping("/pwdfindimpl", method="post")
     def pwdfindimpl(self, request):
-        id = request.GET.get('id', False);
-        email = request.GET.get('email', False);
+        id = request.POST.get('id', False)
+        email = request.POST.get('email', False)
         context = {}
         try:
-            cust = Cust.objects.get(id=id);
+            cust = Cust.objects.get(id=id)
             if cust.email == email:
                 context['center'] = 'identify/OK_pwdfind.html'
                 context['Find_pwd'] = cust.password
             else:
-                raise Exception;
+                raise Exception
         except:
-            print("pwdnonono")
+            context['center'] = 'identify/pwdFind.html'
+            context['error'] = 'error'
         return render(request, 'common/main.html', context);
 
     @request_mapping("/registerimpl", method="post")
