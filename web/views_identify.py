@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.views import View
+
+from views import View
 from django_request_mapping import request_mapping
 
 from web.models import Cust
