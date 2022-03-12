@@ -1,4 +1,4 @@
-from django.test import TestCase
+# from django.test import TestCase
 import csv
 korean_dir = list()
 japan_dir = list()
