@@ -91,7 +91,7 @@ class IdentifyView(View):
         except:
             context['center'] = 'identify/pwdFind.html'
             context['error'] = 'error'
-        return render(request, 'common/main.html', context);
+        return render(request, 'common/main.html', context)
 
     @request_mapping("/registerimpl", method="post")
     def registerimpl(self, request):
