@@ -74,3 +74,44 @@ class MarketView(View):
             'name': market_name
         }
         return render(request, 'market/chicken.html', context)
+
+    @request_mapping('/china', method='get')
+    def china(self, request):
+        market_name = Categori.objects.get(categoriname='중식')
+        page = request.GET.get('page', '1')
+        market_list = Seocho.objects.filter(categori='중식').order_by('marketno')
+        paginator = Paginator(market_list, 9)
+        page_obj = paginator.get_page(page)
+        context = {
+            'objs': page_obj,
+            'name': market_name
+        }
+        return render(request, 'market/chicken.html', context)
+
+    @request_mapping('/buttet', method='get')
+    def buttet(self, request):
+        market_name = Categori.objects.get(categoriname='뷔페식')
+        page = request.GET.get('page', '1')
+        market_list = Seocho.objects.filter(categori='뷔페식').order_by('marketno')
+        paginator = Paginator(market_list, 9)
+        page_obj = paginator.get_page(page)
+        context = {
+            'objs': page_obj,
+            'name': market_name
+        }
+        return render(request, 'market/chicken.html', context)
+    
+    @request_mapping('/etc', method='get')
+    def buttet(self, request):
+        market_name = Categori.objects.get(categoriname='기타')
+        page = request.GET.get('page', '1')
+        market_list = Seocho.objects.filter(categori='기타').order_by('marketno')
+        paginator = Paginator(market_list, 9)
+        page_obj = paginator.get_page(page)
+        context = {
+            'objs': page_obj,
+            'name': market_name
+        }
+        return render(request, 'market/chicken.html', context)
+    
+    
