@@ -19,9 +19,11 @@ class MarketView(View):
         page_obj = paginator.get_page(page)
         context = {
             'objs': page_obj,
-            'name': market_name
+            'name': market_name,
+            'center': 'market/list.html'
+
         }
-        return render(request, 'market/chicken.html', context)
+        return render(request, 'common/main.html', context)
 
     @request_mapping('/japan', method='get')
     def japan(self, request):
@@ -32,9 +34,10 @@ class MarketView(View):
         page_obj = paginator.get_page(page)
         context = {
             'objs': page_obj,
-            'name': market_name
+            'name': market_name,
+            'center': 'market/list.html'
         }
-        return render(request, 'market/chicken.html', context)
+        return render(request, 'common/main.html', context)
     
     @request_mapping('/america', method='get')
     def america(self, request):
@@ -45,9 +48,10 @@ class MarketView(View):
         page_obj = paginator.get_page(page)
         context = {
             'objs': page_obj,
-            'name': market_name
+            'name': market_name,
+            'center': 'market/list.html'
         }
-        return render(request, 'market/chicken.html', context)
+        return render(request, 'common/main.html', context)
     
     @request_mapping('/buttet', method='get')
     def buttet(self, request):
@@ -58,9 +62,10 @@ class MarketView(View):
         page_obj = paginator.get_page(page)
         context = {
             'objs': page_obj,
-            'name': market_name
+            'name': market_name,
+            'center': 'market/list.html'
         }
-        return render(request, 'market/chicken.html', context)
+        return render(request, 'common/main.html', context)
     
     @request_mapping('/snack', method='get')
     def snack(self, request):
@@ -71,9 +76,10 @@ class MarketView(View):
         page_obj = paginator.get_page(page)
         context = {
             'objs': page_obj,
-            'name': market_name
+            'name': market_name,
+            'center': 'market/list.html'
         }
-        return render(request, 'market/chicken.html', context)
+        return render(request, 'common/main.html', context)
 
     @request_mapping('/china', method='get')
     def china(self, request):
@@ -84,9 +90,10 @@ class MarketView(View):
         page_obj = paginator.get_page(page)
         context = {
             'objs': page_obj,
-            'name': market_name
+            'name': market_name,
+            'center': 'market/list.html'
         }
-        return render(request, 'market/chicken.html', context)
+        return render(request, 'common/main.html', context)
 
     @request_mapping('/buttet', method='get')
     def buttet(self, request):
@@ -97,9 +104,10 @@ class MarketView(View):
         page_obj = paginator.get_page(page)
         context = {
             'objs': page_obj,
-            'name': market_name
+            'name': market_name,
+            'center': 'market/list.html'
         }
-        return render(request, 'market/chicken.html', context)
+        return render(request, 'common/main.html', context)
     
     @request_mapping('/etc', method='get')
     def etc(self, request):
@@ -110,8 +118,9 @@ class MarketView(View):
         page_obj = paginator.get_page(page)
         context = {
             'objs': page_obj,
-            'name': market_name
+            'name': market_name,
+            'center': 'market/list.html'
         }
-        return render(request, 'market/chicken.html', context)
+        return render(request, 'common/main.html', context)
     
     
