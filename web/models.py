@@ -8,7 +8,7 @@ class Cust(models.Model):
     name = models.CharField(max_length=10, blank=True, null=True)
     address = models.CharField(max_length=100, blank=True, null=True)
     email = models.CharField(max_length=100, blank=True, null=True)
-    regdate = models.DateField(blank=True, null=True)
+    regdate = models.DateField(auto_now=True)
 
     class Meta:
         db_table = 'cust'
@@ -26,7 +26,7 @@ class Food(models.Model):
     foodid = models.AutoField(primary_key=True)
     name = models.CharField(max_length=30, blank=True, null=True)
     price = models.IntegerField(blank=True, null=True)
-    regdate = models.DateField(blank=True, null=True)
+    regdate = models.DateField(auto_now=True)
 
     class Meta:
         db_table = 'food'
@@ -38,7 +38,7 @@ class Market(models.Model):
     foodid = models.ForeignKey(Food, models.DO_NOTHING, db_column='foodid')
     marketname = models.CharField(max_length=100, blank=True, null=True)
     marketaddress = models.CharField(max_length=100, blank=True, null=True)
-    regdate = models.DateField(blank=True, null=True)
+    regdate = models.DateField(auto_now=True)
     open = models.TimeField(blank=True, null=True)
     close = models.TimeField(blank=True, null=True)
     holiday = models.DateField(blank=True, null=True)
@@ -64,7 +64,7 @@ class Reply(models.Model):
     reviewno = models.ForeignKey('Review', models.DO_NOTHING, db_column='reviewno')
     ceoid = models.ForeignKey(Ceo, models.DO_NOTHING, db_column='ceoid')
     content = models.CharField(max_length=100, blank=True, null=True)
-    regdate = models.DateField(blank=True, null=True)
+    regdate = models.DateField(auto_now=True)
 
     class Meta:
         db_table = 'reply'
@@ -76,7 +76,7 @@ class Review(models.Model):
     custno = models.ForeignKey(Cust, models.DO_NOTHING, db_column='custno')
     content = models.CharField(max_length=100, blank=True, null=True)
     star = models.FloatField(blank=True, null=True)
-    regdate = models.DateField(blank=True, null=True)
+    regdate = models.DateField(auto_now=True)
 
     class Meta:
         db_table = 'review'
