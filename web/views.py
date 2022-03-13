@@ -12,10 +12,10 @@ class MyView(View):
     @request_mapping('/')
     def home(self, request):
         context = {
-            'recommend': 'recommend.html',
-            'popular': 'popular.html',
-            'categori': 'categori.html',
-            'search': 'search.html'
+            'recommend': 'home/recommend.html',
+            'popular': 'home/popular.html',
+            'categori': 'home/categori.html',
+            'search': 'home/search.html'
         }
         return render(request, 'common/home.html', context)
 

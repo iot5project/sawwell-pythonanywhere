@@ -35,7 +35,7 @@ f.close()
 f = open('seocho.csv', 'r', encoding='cp949')
 rdr = csv.reader(f)
 for line in rdr:
-    allist.append(line[1])
+    allist.append(line[0] + " " + line[1])
 f.close()
 
 
@@ -74,4 +74,8 @@ for line in china_dir:
     f.write(line[0] + " " + line[1] + "\n")
 f.close()
 
+f = open('txt/allist.txt', 'w', encoding='cp949')
+for line in allist:
+    f.write(line[0:3] + " " + line[3:] + "\n")
+f.close()
 print(allist)
