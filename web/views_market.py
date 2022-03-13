@@ -3,43 +3,74 @@ from django.shortcuts import render
 from django.views import View
 from django_request_mapping import request_mapping
 
-from web.models import Seocho
+from web.models import Seocho, Categori
 
 
 @request_mapping('/market')
 class MarketView(View):
 
-    @request_mapping('/chicken')
+    @request_mapping('/korea', method='get')
     def chicken(self, request):
         page = request.GET.get('page', '1')
-        market_list = Seocho.objects.order_by('marketno')
+        market_name = Categori.objects.get(categoriname='한식')
+        print(market_name)
+        market_list = Seocho.objects.filter(categori='한식').order_by('marketno')
         paginator = Paginator(market_list, 9)
         page_obj = paginator.get_page(page)
         context = {
-            'objs': page_obj
+            'objs': page_obj,
+            'name': market_name
         }
         return render(request, 'market/chicken.html', context)
 
-    @request_mapping('/korea')
-    def korea(self, request):
-        return render(request, 'market/koreanfood.html')
-
-    @request_mapping('/chinese')
-    def chinese(self, request):
-        return render(request, 'market/chinesefood.html')
-
-    @request_mapping('/dessert')
-    def dessert(self, request):
-        return render(request, 'market/dessert.html')
-
-    @request_mapping('/pizza')
-    def pizza(self, request):
-        return render(request, 'market/pizza.html')
-
-    @request_mapping('/western')
-    def western(self, request):
-        return render(request, 'market/westernfood.html')
-
-    @request_mapping('/fastfood')
-    def fastfood(self, request):
-        return render(request, 'market/fastfood.html')
+    @request_mapping('/japan', method='get')
+    def japan(self, request):
+        market_name = Categori.objects.get(categoriname='일식')
+        page = request.GET.get('page', '1')
+        market_list = Seocho.objects.filter(categori='일식').order_by('marketno')
+        paginator = Paginator(market_list, 9)
+        page_obj = paginator.get_page(page)
+        context = {
+            'objs': page_obj,
+            'name': market_name
+        }
+        return render(request, 'market/chicken.html', context)
+    
+    @request_mapping('/america', method='get')
+    def america(self, request):
+        market_name = Categori.objects.get(categoriname='양식')
+        page = request.GET.get('page', '1')
+        market_list = Seocho.objects.filter(categori='양식').order_by('marketno')
+        paginator = Paginator(market_list, 9)
+        page_obj = paginator.get_page(page)
+        context = {
+            'objs': page_obj,
+            'name': market_name
+        }
+        return render(request, 'market/chicken.html', context)
+    
+    @request_mapping('/buttet', method='get')
+    def buttet(self, request):
+        market_name = Categori.objects.get(categoriname='뷔페')
+        page = request.GET.get('page', '1')
+        market_list = Seocho.objects.filter(categori='뷔페').order_by('marketno')
+        paginator = Paginator(market_list, 9)
+        page_obj = paginator.get_page(page)
+        context = {
+            'objs': page_obj,
+            'name': market_name
+        }
+        return render(request, 'market/chicken.html', context)
+    
+    @request_mapping('/snack', method='get')
+    def snack(self, request):
+        market_name = Categori.objects.get(categoriname='분식')
+        page = request.GET.get('page', '1')
+        market_list = Seocho.objects.filter(categori='분식').order_by('marketno')
+        paginator = Paginator(market_list, 9)
+        page_obj = paginator.get_page(page)
+        context = {
+            'objs': page_obj,
+            'name': market_name
+        }
+        return render(request, 'market/chicken.html', context)
