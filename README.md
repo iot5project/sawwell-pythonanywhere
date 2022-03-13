@@ -45,7 +45,9 @@
 
 <img width="%100" alt='erd' src='https://user-images.githubusercontent.com/73889507/156928469-224a855f-f682-4f5d-9e00-84452788c661.png'>
 
-구축된 DB와 함께 연결하여 파이썬 애니웨어를 통하여 웹상에 배포됩니다.
+구축된 DB와 함께 연결하여 파이썬 애니웨어를 통하여 웹상에 배포됩니다. 
+
+배포 주소 : https://sawwelladmil1541.pythonanywhere.com/
 
 ### 주요화면 기획
 
