@@ -1,5 +1,5 @@
-from bs4 import BeautifulSoup
 import urllib.request
+from bs4 import BeautifulSoup
 from selenium import webdriver
 URL = 'https://www.google.com/search?q={}&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjgwPKzqtXuAhWW62EKHRjtBvcQ_AUoAXoECBEQAw&biw=768&bih=712'
 driver = webdriver.Chrome('D://projects/python/00PMProjectCode/chromedriver/chromedriver.exe')
@@ -13,10 +13,13 @@ for keyword in keywords:
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     images = soup.select_one('#islrg > div.islrc > div:nth-child(2) > a.wXeWr.islib.nfEiy > div.bRMDJf.islir > img')
-    imgUrl = images["src"]
-    with urllib.request.urlopen(imgUrl) as f:
-        with open('./img/' + keyword  + '.jpg', 'wb') as h:
-            img = f.read()
-            h.write(img)
-    print('success ', keyword)
+    try:
+        imgUrl = images["src"]
+        with urllib.request.urlopen(imgUrl) as f:
+            with open('./img/' + keyword  + '.jpg', 'wb') as h:
+                img = f.read()
+                h.write(img)
+        print('success ', keyword)
+    except:
+        print('fail',keyword)
 driver.close()
