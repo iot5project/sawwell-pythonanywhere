@@ -102,7 +102,7 @@ class MarketView(View):
         return render(request, 'market/chicken.html', context)
     
     @request_mapping('/etc', method='get')
-    def buttet(self, request):
+    def etc(self, request):
         market_name = Categori.objects.get(categoriname='기타')
         page = request.GET.get('page', '1')
         market_list = Seocho.objects.filter(categori='기타').order_by('marketno')

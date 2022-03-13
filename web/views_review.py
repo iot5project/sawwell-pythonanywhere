@@ -14,9 +14,10 @@ class ReviewView(View):
         objects = Market.objects.all()
         context = {
             'objs': obj,
-            'objects': objects
+            'objects': objects,
+            'center': 'review/list.html'
         }
-        return render(request, 'review/list.html', context)
+        return render(request, 'common/main.html', context)
 
     @request_mapping("/reviewimpl", method="post")
     def reviewimpl(self, request):

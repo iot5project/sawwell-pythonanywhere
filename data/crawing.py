@@ -16,7 +16,7 @@ for keyword in keywords:
     try:
         imgUrl = images["src"]
         with urllib.request.urlopen(imgUrl) as f:
-            with open('./img/' + keyword  + '.jpg', 'wb') as h:
+            with open('./img/' + keyword + '.jpg', 'wb') as h:
                 img = f.read()
                 h.write(img)
         print('success ', keyword)
