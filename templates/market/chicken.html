@@ -80,7 +80,7 @@
         {% for o in objs  %}
         <div class="col">
           <div class="card shadow-sm">
-            <img src="static/assets/img/market/{{o.marketname}}.jpg" class="bd-placeholder-img card-img-top" width="100%" height="225">
+            <img src="/static/assets/img/market/{{o.marketname}}.jpg" class="bd-placeholder-img card-img-top" width="100%" height="225">
             <div class="card-body">
               <h1 class="card-text">{{o.marketname}}</h1>
               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -102,7 +102,7 @@
       <!-- 이전페이지 -->
       {% if question_list.has_previous %}
       <li class="page-item">
-          <a class="page-link" data-page="{{ objs.previous_page_number }}" href="#">이전</a>
+          <a class="page-link" href="?page={{ objs.previous_page_number }}">이전</a>
       </li>
       {% else %}
       <li class="page-item disabled">
@@ -111,20 +111,22 @@
       {% endif %}
       <!-- 페이지리스트 -->
       {% for page_number in objs.paginator.page_range %}
+      {% if page_number >= objs.number|add:-5 and page_number <= objs.number|add:5 %}
           {% if page_number == objs.number %}
           <li class="page-item active" aria-current="page">
-              <a class="page-link" data-page="{{ page_number }}" href="#">{{ page_number }}</a>
+            <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
           </li>
           {% else %}
           <li class="page-item">
-              <a class="page-link" data-page="{{ page_number }}" href="#">{{ page_number }}</a>
+            <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
           </li>
           {% endif %}
+      {% endif %}
       {% endfor %}
       <!-- 다음페이지 -->
       {% if objs.has_next %}
       <li class="page-item">
-          <a class="page-link" data-page="{{ objs.next_page_number }}" href="#">다음</a>
+        <a class="page-link" href="?page={{ objs.next_page_number }}">다음</a>
       </li>
       {% else %}
       <li class="page-item disabled">
