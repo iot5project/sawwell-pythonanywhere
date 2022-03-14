@@ -113,11 +113,15 @@ class IdentifyView(View):
 
     @request_mapping("/mypage", method="get")
     def mypage(self, request):
-        obj = Cust.objects.get
+        id = request.session['sessionid']
+        obj = Cust.objects.get(id=id)
         context = {
             'center': 'identify/mypage.html',
             'obj': obj
         }
         return render(request, 'common/main.html', context)
+
+
+
 
 
