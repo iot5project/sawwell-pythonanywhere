@@ -122,5 +122,14 @@ class MarketView(View):
             'center': 'market/list.html'
         }
         return render(request, 'common/main.html', context)
+
+    @request_mapping('/menu')
+    def menu(self, request):
+        market_name = Categori.objects.get(categoriname='분식')
+        context = {
+            'center': 'market/menu.html',
+            'name': market_name
+        }
+        return render(request, 'common/main.html', context)
     
     
