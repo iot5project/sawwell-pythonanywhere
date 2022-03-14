@@ -152,17 +152,19 @@ a{
         </div>
           <!-- /post4 toggle/ -->
       <div class="container-md">
-          <div id="reply1" style="display: none">
-            <h3>REPLY</h3>
+        <div id="reply1" style="display: none">
+        <h3>REPLY</h3>
+        {% for rp in rpobjs  %}
             <div class="card row-hover pos-relative py-3 px-3 mb-3 border-warning border-top-0 border-right-0 border-bottom-0 rounded-0">
             <div class="row align-items-center">
               <div class="col-md-8 mb-3 mb-sm-0">
                 <h5>
                   <a href="#" class="text-primary">ceo</a>
                 </h5>
-                <p class="text-sm"><a class="text-black" href="#">reply</a></p></div>
+                <p class="text-sm"><a class="text-black" href="#">{{rp.content}}</a></p></div>
               </div>
             </div>
+          {% endfor %}
           </div>
             <button onclick="toggle_div('reply_write1')">write reply</button>
             <div id="reply_write1" style="display: none">
