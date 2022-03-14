@@ -110,3 +110,14 @@ class IdentifyView(View):
             Cust(id=id, password=password, name=name, address=address, email=email).save()
             print("register ok")
         return render(request, 'common/home.html', context)
+
+    @request_mapping("/mypage", method="get")
+    def mypage(self, request):
+        obj = Cust.objects.get;
+        context = {
+            'center': 'identify/mypage.html',
+            'obj': obj
+        }
+        return render(request, 'common/main.html', context);
+
+
