@@ -13,10 +13,13 @@ class ReviewView(View):
         obj = Cust.objects.all()
         objects = Market.objects.all()
         robjs = Review.objects.all()
+        realtion = Review.objects.select_related('custno').all()
+        print(realtion)
         context = {
             'objs': obj,
             'objects': objects,
-            'robjs' : robjs,
+            'robjs': robjs,
+            'real_obj': realtion,
             'center': 'review/list.html'
         }
         return render(request, 'common/main.html', context)
@@ -29,7 +32,7 @@ class ReviewView(View):
         id = request.session['sessionid']
         custno = Cust.objects.get(id=id)
         print(star, content)
-        context = {'center':'review/list.html' }
+        context = {'center': 'review/list.html'}
         Review(content=content, star=star, marketno=market_list, custno=custno ).save()
         print("register ok")
         return render(request, 'common/main.html', context)
@@ -40,7 +43,7 @@ class ReviewView(View):
         reviewno = Review.objects.get(reviewno='1')
         ceoid = Ceo.objects.get(ceoid='1')
         print(content)
-        context = {'center':'review/list.html' }
+        context = {'center': 'review/list.html'}
         Reply(content=content, reviewno=reviewno, ceoid=ceoid).save()
         print("register ok")
         return render(request, 'common/main.html', context)
