@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views import View
+from django.contrib.auth import logout
 
 from django_request_mapping import request_mapping
 
@@ -120,6 +121,14 @@ class IdentifyView(View):
             'obj': obj
         }
         return render(request, 'common/main.html', context)
+
+    @request_mapping("/delete", method="get")
+    def delete(self, request):
+        id = request.session['sessionid']
+        obj = Cust.objects.get(id=id);
+        obj.delete()
+        logout(request)
+        return render(request, 'common/home.html')
 
     @request_mapping("/updateview", method="get")
     def updateview(self, request):
