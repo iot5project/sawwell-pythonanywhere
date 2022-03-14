@@ -1,4 +1,7 @@
+import json
+
 from django.core.paginator import Paginator
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.views import View
 from django_request_mapping import request_mapping
@@ -19,14 +22,6 @@ class MyView(View):
         }
         return render(request, 'common/home.html', context)
 
-    @request_mapping('/menu')
-    def menu(self, request):
-        return render(request, 'menu.html')
-
-    @request_mapping('/chart11')
-    def chart11(self, request):
-        return render(request, 'chart11.html')
-
     @request_mapping("/seocho", method="get")
     def all(self, request):
         page = request.GET.get('page', '1')
@@ -39,3 +34,11 @@ class MyView(View):
             'objs': page_obj
         }
         return render(request, 'seocho.html', context)
+
+    @request_mapping("/search", method="post")
+    def search(self, request):
+        search = request.POST['search']
+        context = {
+            'objs': search
+        }
+        return HttpResponse(json.dumps(context), content_type='application/json')
