@@ -90,6 +90,8 @@ class Seocho(models.Model):
     phone = models.CharField(max_length=50, blank=True, null=True)
     categori = models.CharField(max_length=100, blank=True, null=True)
     food = models.CharField(max_length=100, blank=True, null=True)
+    open = models.TimeField(max_length=100, blank=True, null=True)
+    close = models.TimeField(max_length=100, blank=True, null=True)
 
     class Meta:
         db_table = 'seocho'

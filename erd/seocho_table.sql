@@ -5,6 +5,8 @@ CREATE TABLE seocho (
 	address varchar(100) NULL,
 	phone varchar(50) NULL,
 	categori varchar(100) NULL,
-	food varchar(100) NULL
+	food varchar(100) NULL,
+	oepn TIME NULL,
+	close TIME NULL
 );
 
