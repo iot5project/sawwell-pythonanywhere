@@ -19,25 +19,27 @@
   <div class="container" data-aos="fade-up">
     <div class="row">
       <div class="col-lg-8 entries">
+        <form action="/identify/update" method="get">
         <article class="entry">
           <h2 class="entry-title">
             <span>MY PAGE</span><br><br>
-            <span>ID : {{obj.id}}</span>
+            id<input type="text" name="id" value="{{obj.id}}" readonly><br>
           </h2>
           <h2 class="entry-title">
-            <span>PASSWORD : {{obj.password}}</span>
+            password<input type="text" name="password" value="{{obj.password}}"><br>
           </h2>
           <h2 class="entry-title">
-            <span>NAME : {{obj.name}}</span>
+            name<input type="text" name="name" value="{{obj.name}}"><br>
           </h2>
           <h2 class="entry-title">
-            <span>E-MAIL : {{obj.email}}</span>
+            email<input type="text" name="email" value="{{obj.email}}"><br>
           </h2>
           <h2 class="entry-title">
-            <span>REGDATE : {{obj.regdate}}</span>
+            regdate<input type="text" name="regdate" value="{{obj.regdate}}" readonly><br>
           </h2>
         </article>
-        <div style="display: inline-block" class="text-center"><button><a href="/identify/updateview">UPDATE</a></button></div>
+        <input type="submit" value="UPDATE">
+        </form>
       </div>
     </div>
   </div>
