@@ -13,12 +13,14 @@ class ReviewView(View):
         obj = Cust.objects.all()
         objects = Market.objects.all()
         robjs = Review.objects.all()
+        rpobjs = Review.objects.all()
         realtion = Review.objects.select_related('custno').all()
         print(realtion)
         context = {
             'objs': obj,
             'objects': objects,
             'robjs': robjs,
+            'rpobjs': rpobjs,
             'real_obj': realtion,
             'center': 'review/list.html'
         }
