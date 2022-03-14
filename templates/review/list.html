@@ -108,14 +108,17 @@ a{
 
 <!--post1-->
       <div class="container-md">
+      {% for r in robjs  %}
+        <div class="col">
+          <div class="card shadow-sm">
            <div class="card row-hover pos-relative py-3 px-3 mb-3 border-warning border-top-0 border-right-0 border-bottom-0 rounded-0">
             <div class="row align-items-center">
               <div class="col-md-8 mb-3 mb-sm-0">
                 <h5>
-                  <a href="#" class="text-primary">User_id</a>
+                  <a href="#" class="text-primary">{{r.custno}}</a>
                 </h5>
-                <p class="text-sm"><a class="text-black" href="#">review</a></p>
-                <div class="text-sm op-5"> <a class="text-black mr-2" href="#">별점: </a></div>
+                <p class="text-sm"><a class="text-black" href="#">{{r.content}}</a></p>
+                <div class="text-sm op-5"> <a class="text-black mr-2" href="#">별점: {{r.star}}</a></div>
               </div>
               <div class="col-md-4 op-7">
                 <div class="row text-center op-7">
@@ -125,7 +128,7 @@ a{
               </div>
             </div>
           </div>
-
+        </div>
           <!-- /post4 toggle/ -->
       <div class="container-md">
           <div id="reply1" style="display: none">
@@ -154,154 +157,11 @@ a{
         </div>
       </div>
     </div>
+    {% endfor %}
+
+</div>
+
 <!--/post1-->
-
-
-
-
-<!--post2-->
-      <div class="container-md">
-           <div class="card row-hover pos-relative py-3 px-3 mb-3 border-warning border-top-0 border-right-0 border-bottom-0 rounded-0">
-            <div class="row align-items-center">
-              <div class="col-md-8 mb-3 mb-sm-0">
-                <h5>
-                  <a href="#" class="text-primary">User_id</a>
-                </h5>
-                <p class="text-sm"><a class="text-black" href="#">review</a></p>
-                <div class="text-sm op-5"> <a class="text-black mr-2" href="#">별점: </a></div>
-              </div>
-              <div class="col-md-4 op-7">
-                <div class="row text-center op-7">
-                  <button class="col px-1" onclick="toggle_div('reply2')"> <i class="ion-ios-chatboxes-outline icon-1x" ></i> <span class="d-block text-sm">Replys</span> </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- /post4 toggle/ -->
-      <div class="container-md">
-          <div id="reply2" style="display: none">
-            <h3>REPLY</h3>
-            <div class="card row-hover pos-relative py-3 px-3 mb-3 border-warning border-top-0 border-right-0 border-bottom-0 rounded-0">
-            <div class="row align-items-center">
-              <div class="col-md-8 mb-3 mb-sm-0">
-                <h5>
-                  <a href="#" class="text-primary">ceo</a>
-                </h5>
-                <p class="text-sm"><a class="text-black" href="#">reply</a></p></div>
-              </div>
-            </div>
-          </div>
-            <button onclick="toggle_div('reply_write2')">write reply</button>
-            <div id="reply_write2" style="display: none">
-                <form action="replyimpl" method="post">
-                  {% csrf_token %}
-                  <br>
-                  reply:<input type="text" name="reply" style="width:400px;height:100px;font-size:10px;"><br>
-                  <br>
-                  <input type="submit" value="register">
-                </form>
-            </div>
-          </div>
-
-<!--/post2-->
-
-<!--post3-->
-      <div class="container-md">
-           <div class="card row-hover pos-relative py-3 px-3 mb-3 border-warning border-top-0 border-right-0 border-bottom-0 rounded-0">
-            <div class="row align-items-center">
-              <div class="col-md-8 mb-3 mb-sm-0">
-                <h5>
-                  <a href="#" class="text-primary">User_id</a>
-                </h5>
-                <p class="text-sm"><a class="text-black" href="#">review</a></p>
-                <div class="text-sm op-5"> <a class="text-black mr-2" href="#">별점: </a></div>
-              </div>
-              <div class="col-md-4 op-7">
-                <div class="row text-center op-7">
-                  <button class="col px-1" onclick="toggle_div('reply3')"> <i class="ion-ios-chatboxes-outline icon-1x" ></i> <span class="d-block text-sm">Replys</span> </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- /post4 toggle/ -->
-      <div class="container-md">
-          <div id="reply3" style="display: none">
-            <h3>REPLY</h3>
-            <div class="card row-hover pos-relative py-3 px-3 mb-3 border-warning border-top-0 border-right-0 border-bottom-0 rounded-0">
-            <div class="row align-items-center">
-              <div class="col-md-8 mb-3 mb-sm-0">
-                <h5>
-                  <a href="#" class="text-primary">ceo</a>
-                </h5>
-                <p class="text-sm"><a class="text-black" href="#">reply</a></p></div>
-              </div>
-            </div>
-          </div>
-            <button onclick="toggle_div('reply_write3')">write reply</button>
-            <div id="reply_write3" style="display: none">
-                <form action="replyimpl" method="post">
-                  {% csrf_token %}
-                  <br>
-                  reply:<input type="text" name="reply" style="width:400px;height:100px;font-size:10px;"><br>
-                  <br>
-                  <input type="submit" value="register">
-                </form>
-            </div>
-          </div>
-
-<!--/post3-->
-
-          <!-- ************End of post 3*************** -->
-
-      <div class="container-md">
-           <div class="card row-hover pos-relative py-3 px-3 mb-3 border-warning border-top-0 border-right-0 border-bottom-0 rounded-0">
-            <div class="row align-items-center">
-              <div class="col-md-8 mb-3 mb-sm-0">
-                <h5>
-                  <a href="#" class="text-primary">User_id</a>
-                </h5>
-                <p class="text-sm"><a class="text-black" href="#">review</a></p>
-                <div class="text-sm op-5"> <a class="text-black mr-2" href="#">별점: </a></div>
-              </div>
-              <div class="col-md-4 op-7">
-                <div class="row text-center op-7">
-                  <button class="col px-1" onclick="toggle_div('reply4')"> <i class="ion-ios-chatboxes-outline icon-1x" ></i> <span class="d-block text-sm">Replys</span> </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- /post4 toggle/ -->
-      <div class="container-md">
-          <div id="reply4" style="display: none">
-            <h3>REPLY</h3>
-            <div class="card row-hover pos-relative py-3 px-3 mb-3 border-warning border-top-0 border-right-0 border-bottom-0 rounded-0">
-            <div class="row align-items-center">
-              <div class="col-md-8 mb-3 mb-sm-0">
-                <h5>
-                  <a href="#" class="text-primary">ceo</a>
-                </h5>
-                <p class="text-sm"><a class="text-black" href="#">reply</a></p></div>
-              </div>
-            </div>
-          </div>
-            <button onclick="toggle_div('reply_write4')">write reply</button>
-            <div id="reply_write4" style="display: none">
-                <form action="replyimpl" method="post">
-                  {% csrf_token %}
-                  <br>
-                  reply:<input type="text" name="reply" style="width:400px;height:100px;font-size:10px;"><br>
-                  <br>
-                  <input type="submit" value="register">
-                </form>
-            </div>
-          </div>
-          <!-- ************End of post 4*************** -->
 
     </section>
   </main><!-- End #main -->
