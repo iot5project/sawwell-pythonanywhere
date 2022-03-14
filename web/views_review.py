@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views import View
 from django_request_mapping import request_mapping
 
-from web.models import Cust, Market, Review, Reply
+from web.models import Cust, Market, Review, Reply, Seocho, Ceo
 
 
 @request_mapping('/review')
@@ -23,17 +23,22 @@ class ReviewView(View):
     def reviewimpl(self, request):
         star = request.POST['star']
         content = request.POST['content']
+        market_list = Market.objects.get(marketno='1')
+        id = request.session['sessionid']
+        custno = Cust.objects.get(id=id)
         print(star, content)
-        context = {}
-        Review(content=content, star=star).save()
+        context = {'center':'review/list.html' }
+        Review(content=content, star=star, marketno=market_list, custno=custno ).save()
         print("register ok")
-        return render(request, 'review/list.html', context)
+        return render(request, 'common/main.html', context)
 
     @request_mapping("/replyimpl", method="post")
     def replyimpl(self, request):
         content = request.POST['reply']
+        reviewno = Review.objects.get(reviewno='1')
+        ceoid = Ceo.objects.get(ceoid='1')
         print(content)
-        context = {}
-        Reply(content=content).save()
+        context = {'center':'review/list.html' }
+        Reply(content=content, reviewno=reviewno, ceoid=ceoid).save()
         print("register ok")
-        return render(request, 'review/list.html', context)
+        return render(request, 'common/main.html', context)
