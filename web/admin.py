@@ -33,7 +33,7 @@ class ReviewAdmin(admin.ModelAdmin):
 
 
 class SeochoAdmin(admin.ModelAdmin):
-    list_display = ('marketno', 'marketname', 'ceoname', 'address', 'phone', 'categori', 'food')
+    list_display = ('marketno', 'marketname', 'ceoname', 'address', 'phone', 'categori', 'food', 'open', 'close')
 
 
 admin.site.register(Cust, CustAdmin)
