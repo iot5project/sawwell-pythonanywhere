@@ -12,9 +12,11 @@ class ReviewView(View):
     def reviewlist(self, request):
         obj = Cust.objects.all()
         objects = Market.objects.all()
+        robjs = Review.objects.all()
         context = {
             'objs': obj,
             'objects': objects,
+            'robjs' : robjs,
             'center': 'review/list.html'
         }
         return render(request, 'common/main.html', context)
