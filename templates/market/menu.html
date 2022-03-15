@@ -4,16 +4,12 @@
     column-count: 3;
     }
 </style>
-
 <body>
-
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top header-inner-pages">
     <div class="container d-flex align-items-center justify-content-between">
 
       <h1 class="logo"><a href="/">Saw Well</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar">
         <ul>
@@ -33,21 +29,23 @@
     <!-- ======= Breadcrumbs ======= -->
     <section id="breadcrumbs" class="breadcrumbs">g
         <div class="container py-5">
-            <div class="row">
-                <div class="col-lg-10 mx-auto col-12 text-center mb-3">
-                    <center><h1 class="mt-0 text-primary">Our Menu</h1></center>
-                </div>
-                {% for objs in menu_list %}
-                <div class="card-columns">
-                    <div class="card card-body">
-                        <span class="float-right font-weight-bold">{{objs.name}}</span>
-                        <br>
-                        <h6 class="text-underline">가격 : {{objs.price}}</h6>
+                <div class="row">
+                    <div class="col-lg-10 mx-auto col-12 text-center mb-3">
+                        <center>
+                            <img src = "/static/assets/img/market/{{market_img.seochono}}.jpg"><br><br>
+                            <h1 class="mt-0 text-primary">{{market_img.marketname}} Menu</h1>
+                        </center>
                     </div>
+                    <div class="card-columns">
+                        {% for obj in menu_list %}
+                        <div class="card card-body">
+                            <span class="float-right font-weight-bold">{{obj.name}}</span>
+                            <br>
+                            <h6 class="text-underline">가격 : {{obj.price}}</h6>
+                        </div>
+                        {% endfor %}
                 </div>
-                {% endfor %}
+            </div>
         </div>
-
-
     </section>
   </main><!-- End #main -->
