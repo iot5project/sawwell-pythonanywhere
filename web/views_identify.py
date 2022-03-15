@@ -1,9 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views import View
 from django.contrib.auth import logout
-
 from django_request_mapping import request_mapping
-
 from web.models import Cust
 
 
@@ -115,7 +113,7 @@ class IdentifyView(View):
     @request_mapping("/mypage", method="get")
     def mypage(self, request):
         id = request.session['sessionid']
-        obj = Cust.objects.get(id=id);
+        obj = Cust.objects.get(id=id)
         context = {
             'center': 'identify/mypage.html',
             'obj': obj
@@ -125,7 +123,7 @@ class IdentifyView(View):
     @request_mapping("/delete", method="get")
     def delete(self, request):
         id = request.session['sessionid']
-        obj = Cust.objects.get(id=id);
+        obj = Cust.objects.get(id=id)
         obj.delete()
         logout(request)
         return render(request, 'common/home.html')
@@ -133,28 +131,25 @@ class IdentifyView(View):
     @request_mapping("/updateview", method="get")
     def updateview(self, request):
         id = request.session['sessionid']
-        obj = Cust.objects.get(id=id);
+        obj = Cust.objects.get(id=id)
         context = {
             'center': 'identify/update.html',
             'obj': obj
-        };
-        return render(request, 'common/main.html', context);
+        }
+        return render(request, 'common/main.html', context)
 
     @request_mapping("/update", method="get")
     def update(self, request):
-
-        password = request.GET['password'];
-        id = request.GET['id'];
-        name = request.GET['name'];
-        email = request.GET['email'];
-
-        obj = Cust.objects.get(id=id);
-        obj.name = name;
-        obj.password = password;
-        obj.email = email;
-        obj.save();
-
-        return redirect('/identify/mypage');
+        password = request.GET['password']
+        id = request.GET['id']
+        name = request.GET['name']
+        email = request.GET['email']
+        obj = Cust.objects.get(id=id)
+        obj.name = name
+        obj.password = password
+        obj.email = email
+        obj.save()
+        return redirect('/identify/mypage')
 
 
 

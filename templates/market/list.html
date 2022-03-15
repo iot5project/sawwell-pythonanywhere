@@ -85,7 +85,7 @@
         {% for o in objs  %}
         <div class="col">
           <div class="card shadow-sm">
-            <img src="/static/assets/img/market/{{o.marketno}}.jpg" class="bd-placeholder-img card-img-top" width="100%" height="225">
+            <img src="/static/assets/img/market/{{o.seochono}}.jpg" class="bd-placeholder-img card-img-top" width="100%" height="225">
             <div class="card-body">
               <h1 class="card-text">{{o.marketname}}</h1>
               <p class="card-text">{{o.address}}</p>
@@ -95,7 +95,7 @@
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary"><a href="/market/menu">Menu</a></button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary" style="algin=center;"><a href="/market/review">Review</a></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary" style="algin=center;"><a href="/review/reviewlist">Review</a></button>
                 </div>
                 <small class="text-muted">9 mins</small>
               </div>
