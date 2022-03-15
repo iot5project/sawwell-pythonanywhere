@@ -123,14 +123,16 @@ class MarketView(View):
         }
         return render(request, 'common/main.html', context)
 
-    @request_mapping('/menu')
-    def menu(self, request):
-        menu_list = Seochofood.objects.filter(seochono='1')
+    @request_mapping('/menu/<int:pk>/', method='get')
+    def menu(self, request, pk):
+        menu_list = Seochofood.objects.filter(seochono=pk)
+        market_img = Seocho.objects.get(seochono=pk)
         market_name = Categori.objects.get(categoriname='분식')
         context = {
             'center': 'market/menu.html',
             'name': market_name,
-            'menu_list': menu_list
+            'menu_list': menu_list,
+            'market_img': market_img
         }
         return render(request, 'common/main.html', context)
     
