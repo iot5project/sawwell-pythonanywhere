@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views import View
 from django_request_mapping import request_mapping
 
-from web.models import Cust, Market, Review, Reply, Seocho, Ceo
+from web.models import Cust, Market, Review, Reply, Ceo
 
 
 @request_mapping('/review')
@@ -35,7 +35,7 @@ class ReviewView(View):
         custno = Cust.objects.get(id=id)
         print(star, content)
         context = {'center': 'review/list.html'}
-        Review(content=content, star=star, marketno=market_list, custno=custno ).save()
+        Review(content=content, star=star, marketno=market_list, custno=custno).save()
         print("register ok")
         return render(request, 'common/main.html', context)
 

@@ -83,7 +83,7 @@ class Review(models.Model):
 
 
 class Seocho(models.Model):
-    marketno = models.IntegerField(primary_key=True)
+    seochono = models.IntegerField(primary_key=True)
     marketname = models.CharField(max_length=50, blank=True, null=True)
     ceoname = models.CharField(max_length=50, blank=True, null=True)
     address = models.CharField(max_length=100, blank=True, null=True)
@@ -95,3 +95,14 @@ class Seocho(models.Model):
 
     class Meta:
         db_table = 'seocho'
+
+
+class Seochofood(models.Model):
+    foodid = models.AutoField(primary_key=True)
+    seochono = models.ForeignKey(Seocho, models.DO_NOTHING, db_column='seochono')
+    name = models.CharField(max_length=30, blank=True, null=True)
+    price = models.IntegerField(blank=True, null=True)
+    regdate = models.DateField(auto_now=True)
+
+    class Meta:
+        db_table = 'seochofood'
