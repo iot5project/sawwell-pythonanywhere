@@ -2,41 +2,40 @@ from django.shortcuts import render
 from django.views import View
 from django_request_mapping import request_mapping
 
-from web.models import Cust, Market, Review, Reply, Ceo
+from web.models import Cust, Review, Reply, Ceo, Seocho
 
 
 @request_mapping('/review')
 class ReviewView(View):
 
-    @request_mapping('/reviewlist')
-    def reviewlist(self, request):
+    @request_mapping('/reviewlist/<int:pk>/')
+    def reviewlist(self, request, pk):
         obj = Cust.objects.all()
-        objects = Market.objects.all()
         robjs = Review.objects.all()
-        rpobjs = Review.objects.all()
-        realtion = Review.objects.select_related('custno').all()
-        print(realtion)
+        reply_list = Reply.objects.filter(seochono=pk)
+        review_list = Review.objects.select_related('seochono').filter(seochono=pk)
+        market = Seocho.objects.get(seochono=pk)
         context = {
             'objs': obj,
-            'objects': objects,
+            'market': market,
             'robjs': robjs,
-            'rpobjs': rpobjs,
-            'real_obj': realtion,
-            'center': 'review/list.html'
+            'rpobjs': reply_list,
+            'real_obj': review_list,
+            'center': 'review/list.html',
         }
         return render(request, 'common/main.html', context)
 
-    @request_mapping("/reviewimpl", method="post")
-    def reviewimpl(self, request):
+    @request_mapping("/reviewimpl/<int:pk>/", method="post")
+    def reviewimpl(self, request, pk):
         star = request.POST['star']
         content = request.POST['content']
-        market_list = Market.objects.get(marketno='1')
         id = request.session['sessionid']
         custno = Cust.objects.get(id=id)
+        seochono = Seocho.objects.get(seochono=pk)
         print(star, content)
         context = {'center': 'review/list.html'}
-        Review(content=content, star=star, marketno=market_list, custno=custno).save()
-        print("register ok")
+        Review(content=content, star=star, seochono=seochono, custno=custno).save()
+        print("write ok")
         return render(request, 'common/main.html', context)
 
     @request_mapping("/replyimpl", method="post")

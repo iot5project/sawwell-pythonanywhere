@@ -13,7 +13,6 @@ class MarketView(View):
     def chicken(self, request):
         page = request.GET.get('page', '1')
         market_name = Categori.objects.get(categoriname='한식')
-        print(market_name)
         market_list = Seocho.objects.filter(categori='한식').order_by('seochono')
         paginator = Paginator(market_list, 9)
         page_obj = paginator.get_page(page)
@@ -21,7 +20,6 @@ class MarketView(View):
             'objs': page_obj,
             'name': market_name,
             'center': 'market/list.html'
-
         }
         return render(request, 'common/main.html', context)
 
@@ -127,7 +125,7 @@ class MarketView(View):
     def menu(self, request, pk):
         menu_list = Seochofood.objects.filter(seochono=pk)
         market_img = Seocho.objects.get(seochono=pk)
-        market_name = Categori.objects.get(categoriname='분식')
+        market_name = Seocho.objects.get(seochono=pk)
         context = {
             'center': 'market/menu.html',
             'name': market_name,
