@@ -77,10 +77,10 @@ DATABASES = {
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
         },
-        'NAME': 'sawwelladmil1541$sawwell',
-        'USER': 'sawwelladmil1541',
-        'PASSWORD': 'pass1541',
-        'HOST': 'sawwelladmil1541.mysql.pythonanywhere-services.com',
+        'NAME': 'sawwell',
+        'USER': 'root',
+        'PASSWORD': '111111',
+        'HOST': '127.0.0.1',
     }
 }
 

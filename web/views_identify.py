@@ -41,7 +41,7 @@ class IdentifyView(View):
     def logout(self, request):
         if request.session['sessionid'] is not None:
             del request.session['sessionid']
-        return render(request, 'common/home.html')
+        return redirect('/')
 
     @request_mapping("/loginimpl", method="post")
     def loginimpl(self, request):
@@ -72,7 +72,7 @@ class IdentifyView(View):
             else:
                 raise Exception
         except:
-            context['center'] = 'identify/idfind.html'
+            context['center'] = 'identify/idFind.html'
             context['error'] = 'error'
         return render(request, 'common/main.html', context)
 
