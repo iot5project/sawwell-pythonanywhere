@@ -1,59 +1,50 @@
 # 장고 프로젝트
 
+## 목차
+
+1. 프로젝트 배경
+
+2. 프로젝트 팀 구성 및 역할
+
+3. 프로젝트 수행절차 및 방법
+
+4. 프로젝트 수행 결과
+
+## 1. 프로젝트 배경
+
+주제 : 서초구 음식점 추천 사이트(소비자가 음식점을 고르는데에 도움을 주기위한 사이트)
+
+목적 : 음식점 결정시간을  최소화하기 위한 추천 서비스 시스템 구축
+
+개요 : request - django - MariaDB
+
+<img width="%100" alt='contribute' src='https://user-images.githubusercontent.com/73889507/156279545-b7737c3b-ecc1-41e3-9d18-0626b5139e5e.jpg'>
+
+구축된 DB와 함께 연결하여 파이썬 애니웨어를 통하여 웹상에 배포됩니다.
+
+배포 주소 : https://sawwell.pythonanywhere.com/
+
+구조 
+
+: 로그인-일반회원 로그인/ceo로그인, 마이페이지, 개인정보 업데이트, 계정삭제
+
+: 카테고리-음식점리스트-음식점 정보/메뉴-리뷰 달기
+
+기대효과 : 저장된 DB와 UI를 통해 음식점의 정보를 얻어 결정에 도움을 줄 수 있다.
+
+## 역할
+
 팀 : 잘했조
 
 프로젝트 명 : saw well
 
-팀원 : 강민성, 김진우, 노현진, 이채림
-
-## 역할
-
-팀장: 김진우: SQL 및 데이터 분석 및 django 
+팀장: SQL 및 데이터분석 및 django orm 및 전체적 설계 
 
 팀원: 이채림: reivew orm 구축 및 review page 구현
 
 노현진: login orm 구축 및 login page 구현
 
 강민성: html readable Code 및 데이터 조사
-
-
-## 프로젝트 정보 
-
-### 1.프로젝트 주제
-
-서울 음식점 추천 사이트
-
-### 2.주제 선정배경 또는 이유
-
-점심시간 때  음식점 고르는 시간을 해소하기 위해 음식점 추천 서비스를 제공하고자 합니다.
-
-### 3. 프로젝트 개요
-
-가게 선택후 후기와 별점을 남길 수 있고, 음식 추천 서비스을 이용해 음식 메뉴를 고를 수도 있습니다.
-
-<img width="%100" alt='contribute' src='https://user-images.githubusercontent.com/73889507/156279545-b7737c3b-ecc1-41e3-9d18-0626b5139e5e.jpg'>
-
-### ERD
-
-<img width="%100" alt='erd' src='https://user-images.githubusercontent.com/73889507/156583549-6f74a22b-7fc5-435a-8a0f-e58b164b4509.png'>
-
-### 테스트 
-
-## 테스트 쿼리 및 결과
-
-<img width="%100" alt='erd' src='https://user-images.githubusercontent.com/73889507/156928469-224a855f-f682-4f5d-9e00-84452788c661.png'>
-
-구축된 DB와 함께 연결하여 파이썬 애니웨어를 통하여 웹상에 배포됩니다. 
-
-배포 주소 : https://sawwelladmil1541.pythonanywhere.com/
-
-### 주요화면 기획
-
-bootstrampmade.com 템플릿을 이용 (https://bootstrapmade.com/demo/Tempo)
-
-<img width="%100" alt='erd' src='https://user-images.githubusercontent.com/73889507/157559811-f0419800-8c63-4c13-b098-573d9b099077.png'>
-
-### 데이터
 
 ## 코드 컨베이션
 
@@ -137,6 +128,54 @@ PEP8에서는 공백 4칸으로 들여쓰기 하는 것을 원칙으로 하고 �
 
 3/10 ~ 3/16 : review page 완료
 
+3/17 ~ 3/18 : 프로젝트 고도화 및 보고서 & ppt 작성
+
 3/18: 최종 마무리 및 발표
 
-3/9: 완성
+## 프로젝트 수행 결과 목차
+
+1.  Database 구조, 크롤링, 템플릿 분할
+
+2. Login Page(cust, ceo) 구조 및 프로세스
+
+3. Main Page(category,popular,search,chart)
+
+4. Sub Page (markets, menu, review & reply)
+
+## 1.  Database 구조
+
+Register를 통해 회원 등록시 회원 레코드 생성
+
+회원정보와 가게정보를 받아 리뷰 작성
+
+<img width="%100" alt='erd' src='https://user-images.githubusercontent.com/73889507/159175770-fd478540-0dea-4e16-8a6d-0ab1318ee529.png'>
+
+## 2. Data 크롤링
+
+가계 대표 이미지를 크롤링(가게 이미지라 맞지 않은것은 직접 수정)
+
+<img width="%100" alt='crawing2' src='https://user-images.githubusercontent.com/73889507/159176383-6fd1ba9d-0e15-42aa-8884-0f1417ff8216.gif'>
+
+## 3. 데이터 등록 마켓 갯수와 동일한 test 쿼리 만들기
+
+데이터 등록 마켓 갯수와 동일한 test 쿼리 만들기
+
+<img width="%100" alt='test' src='https://user-images.githubusercontent.com/73889507/159176490-c18cb5ae-fb2f-484a-9f6c-8bb46bd0a86a.png'>
+
+## 4. csv 데이터
+
+csv 데이터 Hide sql에서 데이터 저장
+
+<img width="%100" alt='crawing2' src='https://user-images.githubusercontent.com/73889507/159176551-82333ea0-71d4-480f-95c4-661c4ba99ac2.png'>
+
+
+
+
+
+
+
+
+
+
+
+
