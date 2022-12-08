@@ -51,18 +51,18 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="/">Home</a></li>
+          <li><a class="nav-link scrollto active" href="/">홈</a></li>
           {% if request.session.sessionid == None %}
-          <li><a class="nav-link scrollto" href="/identify/login">login</a></li>
-          <li><a class="nav-link scrollto" href="/identify/register">register</a></li>
+          <li><a class="nav-link scrollto" href="/identify/login">로그인</a></li>
+          <li><a class="nav-link scrollto" href="/identify/register">회원가입</a></li>
           <li><a class="nav-link scrollto" href="/ceo/login">ceo</a></li>
           {% else %}
-          <li><a class="nav-link scrollto" href="/identify/mypage">mypage</a></li>
-          <li><a class="nav-link scrollto" href="/identify/logout">logout</a></li>
+          <li><a class="nav-link scrollto" href="/identify/mypage">마이페이지</a></li>
+          <li><a class="nav-link scrollto" href="/identify/logout">로그아웃</a></li>
           {% endif %}
-          <li><a class="nav-link scrollto" href="#services">category</a></li>
-          <li><a class="nav-link scrollto " href="#portfolio">popular</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Search</a></li>
+          <li><a class="nav-link scrollto" href="#services">종류</a></li>
+          <li><a class="nav-link scrollto " href="#portfolio">인기순위</a></li>
+          <li><a class="nav-link scrollto" href="#contact">검색</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -75,7 +75,6 @@
     <div class="hero-container">
       <h3>Welcome to <strong>Saw Well</strong></h3>
       <h1>We Recommend Restaurant</h1>
-      <h2>Use 'Sawwell' created by the 잘했조 team to find delicious restaurants in Seocho-gu</h2>
       <a href="#about" class="btn-get-started scrollto">Get Started</a>
     </div>
   </section><!-- End Hero -->
@@ -126,11 +125,8 @@
           <div class="col-lg-3 col-md-6 footer-contact">
             <h3>Sawwell</h3>
             <p>
-              212 Teheran-ro <br>
               Seoul, Gangnam-gu <br>
               South Korea <br><br>
-              <strong>Phone:</strong> +82 5589 55488 55<br>
-              <strong>Email:</strong> sawwell@gmail.com<br>
             </p>
           </div>
         </div>
