@@ -13,9 +13,8 @@ if(error[0] == {{error}}){
     <!-- Uncomment below if you prefer to use an image logo -->
     <nav id="navbar" class="navbar">
       <ul>
-        <li><a class="nav-link scrollto " href="/">Home</a></li>
-        <li><a class="nav-link scrollto" href="/identify/login">login</a> </li>
-        <li><a class="nav-link scrollto" href="/identify/register">register</a> </li>
+        <li><a class="nav-link scrollto " href="/">홈</a></li>
+        <li><a class="nav-link scrollto" href="/identify/register">회원가입</a> </li>
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </nav><!-- .navbar -->
@@ -25,11 +24,10 @@ if(error[0] == {{error}}){
 <section id="breadcrumbs" class="breadcrumbs">
   <div class="container">
     <ol>
-      <li><a href="/">Home</a></li>
-      <li><a href="/identify/login">Login</a></li>
-      <li><a href="/identify/register">register</a></li>
+      <li><a href="/">홈</a></li>
+      <li><a href="/identify/register">회원가입</a></li>
     </ol>
-    <h2>login</h2>
+    <h2>로그인</h2>
   </div>
 </section><!-- End Breadcrumbs -->
 <section id="blog" class="blog">
@@ -38,22 +36,22 @@ if(error[0] == {{error}}){
       <div class="col-lg-8 entries">
         <article class="entry">
           <h2 class="entry-title">
-            <a href="blog-single.html">login</a>
+            <a href="blog-single.html">로그인</a>
           </h2>
           <div class="entry-content">
             <form action="/identify/loginimpl" method="post" role="form" class="php-email-form">
               {% csrf_token %}
               <div class="form-group mt-3">
-                <input type="text" class="form-control" name="id" id="id" placeholder="Id" required>
+                <input type="text" class="form-control" name="id" id="id" placeholder="아이디" required>
               </div>
               <div class="form-group mt-3">
-                <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
+                <input type="password" class="form-control" name="password" id="password" placeholder="비밀번호" required>
               </div>
               <br>
-              <div style="display: inline-block" class="text-center"><button type="submit">login</button></div><br>
+              <div class="text-center"><button type="submit">로그인</button></div><br>
             </form>
-            <div style="display: inline-block" class="text-center"><button><a href="/identify/idfind">idfind</a></button></div>
-            <div style="display: inline-block" class="text-center"><button><a href="/identify/pwdfind">pwdfind</a></button></div>
+            <a style="margin-left:280px;" class="text-center; "><a href="/identify/idfind">아이디 찾기</a></a>
+            <a style="inline-block; margin-left:60px;" class="text-center" ><a href="/identify/pwdfind">비밀번호 찾기</a></a>
           </div>
         </article>
       </div>

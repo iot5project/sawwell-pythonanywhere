@@ -15,9 +15,9 @@ if(error[0] == {{error}}){
 
     <nav id="navbar" class="navbar">
       <ul>
-        <li><a class="nav-link scrollto " href="/">Home</a></li>
-        <li><a class="nav-link scrollto" href="/identify/login">login</a> </li>
-        <li><a class="nav-link scrollto" href="/identify/register">register</a> </li>
+        <li><a class="nav-link scrollto " href="/">홈</a></li>
+        <li><a class="nav-link scrollto" href="/identify/login">로그인</a> </li>
+        <li><a class="nav-link scrollto" href="/identify/register">회원가입</a> </li>
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </nav><!-- .navbar -->
@@ -29,11 +29,11 @@ if(error[0] == {{error}}){
   <div class="container">
 
     <ol>
-      <li><a href="/">Home</a></li>
-      <li><a href="/identify/login">Login</a></li>
-      <li><a href="/identify/register">register</a></li>
+      <li><a href="/">홈</a></li>
+      <li><a href="/identify/login">로그인</a></li>
+      <li><a href="/identify/register">회원가입</a></li>
     </ol>
-    <h2>login</h2>
+    <h2>로그인</h2>
 
   </div>
 </section><!-- End Breadcrumbs -->
@@ -43,29 +43,29 @@ if(error[0] == {{error}}){
       <div class="col-lg-8 entries">
         <article class="entry">
           <h2 class="entry-title">
-            <a href="blog-single.html">register</a>
+            <a href="blog-single.html">회원가입</a>
           </h2>
           <div class="entry-content">
         <form action="/identify/registerimpl" method="post" role="form" class="php-email-form">
           {% csrf_token %}
           <div class="form-group mt-3">
-            <input type="text" class="form-control" name="id" id="id" placeholder="Id" required>
+            <input type="text" class="form-control" name="id" id="id" placeholder="아이디" required>
           </div>
           <div class="form-group mt-3">
-            <input type="text" class="form-control" name="password" id="password" placeholder="Password" required>
+            <input type="text" class="form-control" name="password" id="password" placeholder="비밀번호" required>
           </div>
           <div class="form-group mt-3">
-            <input type="text" class="form-control" name="name" id="name" placeholder="Name" required>
+            <input type="text" class="form-control" name="name" id="name" placeholder="이름" required>
           </div>
           <div class="form-group mt-3">
-            <input type="text" class="form-control" name="address" id="address" placeholder="Address" required>
+            <input type="text" class="form-control" name="address" id="address" placeholder="주소" required>
           </div>
           <div  class="form-group mt-3">
-            <input type="text" class="form-control" name="email" id="email" placeholder="Email" required>
+            <input type="text" class="form-control" name="email" id="email" placeholder="이메일" required>
           </div>
           <br>
-          <div style="display: inline-block" class="text-center"><button type="submit">register</button></div>
-          <div style="display: inline-block" class="text-center"><button type="reset">reset</button></div>
+          <div style="display: inline-block" class="text-center"><button type="submit">회원가입</button></div>
+          <div style="display: inline-block" class="text-center"><button type="reset">초기화</button></div>
         </form>
           </div>
         </article>
